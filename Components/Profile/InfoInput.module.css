@@ -1,0 +1,29 @@
+.label{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.05px;
+    color: #242424;
+}
+.inp{
+    padding: 8px;
+    width: 440px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+}
+.frm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 234px;
+}
+.frm div{
+    display: flex;
+    flex-direction: column;
+
+}

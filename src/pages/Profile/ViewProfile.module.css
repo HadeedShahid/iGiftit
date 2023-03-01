@@ -1,0 +1,42 @@
+.Focused{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+
+    /* gray/900 */
+
+    color: #212121;
+    border-bottom: 2px solid #212121 !important;
+    width: fit-content;
+    /* padding-bottom: 14px; */
+}
+.NotFocused{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+
+    /* gray/600 */
+
+    color: #757575;
+}
+.linkBox{
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin-top: 60px;
+}
+.linkBox button{
+    background: #FFFFFF;
+    border: none;
+    padding-bottom: 14px;
+}

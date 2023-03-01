@@ -1,0 +1,29 @@
+.PathCont span{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #212121;
+}
+.PathCont img{
+    width: 24px;
+    height: 24px;
+}
+.PathCont img,
+.PathCont span{
+    margin-right: 14px;
+
+}
+.PathCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 24px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.PathCont .Selected{
+    font-weight: 600;
+}

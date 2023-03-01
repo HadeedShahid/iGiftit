@@ -1,0 +1,31 @@
+.layout{
+    padding: 40px 0;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-rows: repeat(4,1fr); */
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 40px;
+    column-gap: 30px;
+    /* align-items: start */
+}
+.card{
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    border-radius: 8px;
+    width: fit-content;
+}
+.BanClass{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+.twoCols{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.class{
+    align-self:flex-start;
+}
+.class2{
+    align-self: flex-end;
+    height: 100%;
+}

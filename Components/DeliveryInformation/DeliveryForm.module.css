@@ -1,0 +1,85 @@
+.title{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #242424;
+    margin-bottom: 32px;
+    /* border: 2px solid red; */
+}
+.FormCont label{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #757575;
+}
+.FormCont input[type=text]{
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    height: 30px;
+    width: 100% ;
+}
+.InpWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 2px solid green; */
+    flex-basis: 60%;
+    /* margin-right: 10px; */
+    flex-shrink: 1;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 2px solid #0000ff; */
+    height: 100%;
+    flex-basis: 30%;
+    flex-shrink: 10;
+}
+.checkbox{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
+}
+.CheckWrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 32px;
+    /* border: 2px solid red; */
+}
+.btn{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+
+    padding: 10px 10px;
+    width: 100%;
+    /* width: auto; */
+}
+.InnerWrap{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid black; */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.FormCont input[type=checkbox] {
+    accent-color: #242424;
+    margin: 0;
+    margin-right: 8px;
+}

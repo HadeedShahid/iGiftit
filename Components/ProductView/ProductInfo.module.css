@@ -1,0 +1,73 @@
+.cont{
+    /* width: 440px; */
+    width: 100%;
+    /* border: 2px solid black; */
+}
+.NamePrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid red ;
+}
+.NamePrice h1{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #242424;
+}
+.NamePrice p{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+}
+.ByColor{
+    margin-bottom: 20px;
+}
+.ByColor p{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #242424;
+}
+.AddCartBtn{
+    width: 50%;
+    height: 100%;
+}
+.Addtocart{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-right: 5px;
+}
+.inputwrap{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+}
+.inputwrap input{
+    max-width: 84px;
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+.BottomWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+}

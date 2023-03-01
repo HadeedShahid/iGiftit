@@ -1,0 +1,43 @@
+.ContentWrapper{
+    position: absolute;
+    
+    /* transform: translate(0,-60%); */
+    
+    left: 3%;
+    top: 25%;
+    /* border: 2px solid red; */
+    width: 30%;
+
+}
+.BannerText{
+    
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    /* border: 3px solid black; */
+}
+.mainImg{
+    width: 100%;
+}
+.class{
+    color: #FFFFFF;
+    width: 40%;
+    font-size: 14px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+.class img{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}

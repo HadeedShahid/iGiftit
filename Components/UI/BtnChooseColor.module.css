@@ -1,0 +1,21 @@
+.btn{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
+    border: none;
+    width: 65px;
+    height: 27px;
+    border-right: 1px solid #E0E0E0;
+    background-color: #fff;
+}
+.btn:last-child{
+    border-right: none;
+}
+.cont{
+    border: 1px solid #E0E0E0;
+    width: fit-content;
+    padding: 2px;
+    border-radius: 4px;
+}

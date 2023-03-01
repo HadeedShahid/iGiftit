@@ -1,0 +1,58 @@
+.title{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #242424;
+    text-align: center;
+}
+.CardWrap{
+    /* border: 2px solid black; */
+    margin-top: 24px;
+}
+.Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 8px;
+}
+.OuterCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    padding: 16px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.02);
+    border-radius: 8px 0px 8px 8px;
+    margin: auto 0;
+}
+.PaymentTotalOrder{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #242424;
+    margin-bottom: 16px;
+}
+.Charges{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #787878;
+}
+.Total{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #242424;
+}
