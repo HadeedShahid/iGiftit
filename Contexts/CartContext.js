@@ -1,4 +1,4 @@
-import { createContext, useContext, Context } from 'react'
+import { createContext, useContext, Context,useState } from 'react'
 
 const userCartContext = createContext({
   cartItems:[],
@@ -7,18 +7,21 @@ const userCartContext = createContext({
   removeCartItem: async (id)=>{},
 });
 
-export const cartContextProvider=(props)=>{
+export const CartContextProvider=(props)=>{
+    
+    const [cartItems,setCartItems] = useState([]);
 
     const addItemHandler=(item)=>{
-        (item)=>{ setCartItems(...cartItems,item)
-        }
+        console.log("setting item", item);
+        const newArray = [...cartItems,item]
+        console.log(newArray)
+        setCartItems(newArray)
     }
     const removeItemHandler=(id)=>{
         (el)=>{ setCartItems(
             cartItems.filter(function(el) { return el.Name != "Kristian"; })
         )}
     }
-    const [cartItems,setCartItems] = useState([]);
     return (
         <userCartContext.Provider value={
             {cartItems:cartItems,
