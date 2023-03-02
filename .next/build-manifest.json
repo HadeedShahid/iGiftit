@@ -15,10 +15,15 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/Products/[prodId]": [
+    "/Homepage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Products/[prodId].js"
+      "static/chunks/pages/Homepage.js"
+    ],
+    "/Profile": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Profile.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
