@@ -34,7 +34,7 @@ const ProductInfo=(props)=>{
                         </Fragment>
                     }
                 </div>
-                <WrapItem></WrapItem>
+                <WrapItem cards={props.cards}></WrapItem>
                 <div className={styles.BottomWrapper}>
                     <div className={styles.inputwrap}>
                         <BtnNumeric type={'min'}></BtnNumeric>

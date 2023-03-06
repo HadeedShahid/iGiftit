@@ -1,6 +1,20 @@
 import styles from './WrapItem.module.css';
 import Button from '../UI/Button';
-const WrapItem=()=>{
+import { Fragment, useState } from 'react';
+import GreetingCardModal from '../GreetingCard/GreetingCardModal';
+const WrapItem=(props)=>{
+    const [pressed,setPressed] = useState("");
+    const [selectCard,setSelectCard] = useState(false);
+    const wrapBtnHandler=(event)=>{
+        setPressed( Number(event.target.id));
+        console.log (typeof event.target.id)
+    }
+    const cardSelectHandler=()=>{
+        setSelectCard(true);
+    }
+    const ModalHandler=()=>{
+        setSelectCard(false);
+    }
     const wraps=[
         {key:1 , wrap:'wrap1.png'},
         {key:2 ,wrap:'wrap2.png'},
@@ -9,25 +23,29 @@ const WrapItem=()=>{
     let c = 0;
     const wrap_btns=wraps.map((item)=>{
         c+=1;
-        return <button key={c} className={styles.btn}>
-            <img src={'/static/images/wraps/'+item.wrap} alt='first wrap'></img>
+        return <button onClick={wrapBtnHandler}  key={c} className={`${styles.btn} ${pressed === c ? styles.border:undefined}`}>
+            <img id={c} src={'/static/images/wraps/'+item.wrap} alt='first wrap'></img>
         </button>
     });
+    
     return(
-        <div className={styles.cont}>
-            <div className={styles.heading}>Wrap Item <span>(optional)</span></div>
-            <div className={styles.wrap}>
-                <div className={styles.selectTitle}>Select Wrapping Paper</div>
-                <div className={styles.buttonWidth}>
-                    <div className={styles.buttonwrap}>{wrap_btns}</div>
-                    <Button class={styles.GreetingCard}>
-                        <div className={styles.selectGreet}>Select Greeting Card <span>(optional)</span></div>
-                    </Button>
+        <Fragment>
+            {selectCard && <GreetingCardModal cards={props.cards} onClose={ModalHandler}></GreetingCardModal>}
+            <div className={styles.cont}>
+                <div className={styles.heading}>Wrap Item <span>(optional)</span></div>
+                <div className={styles.wrap}>
+                    <div className={styles.selectTitle}>Select Wrapping Paper</div>
+                    <div className={styles.buttonWidth}>
+                        <div className={styles.buttonwrap}>{wrap_btns}</div>
+                        <Button onClick={cardSelectHandler} class={styles.GreetingCard}>
+                            <div className={styles.selectGreet}>Select Greeting Card <span>(optional)</span></div>
+                        </Button>
+                    </div>
+                    
                 </div>
                 
             </div>
-            
-        </div>
+        </Fragment>
     );
 };
 export default WrapItem;

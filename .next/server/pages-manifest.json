@@ -2,7 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/": "pages/index.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/api/Addresses/getAddresses": "pages/api/Addresses/getAddresses.js",
   "/Profile": "pages/Profile.js",
-  "/Homepage": "pages/Homepage.js"
+  "/api/Orders/getOrders": "pages/api/Orders/getOrders.js",
+  "/Products/[prodId]": "pages/Products/[prodId].js"
 }

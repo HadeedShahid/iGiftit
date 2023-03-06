@@ -15,8 +15,16 @@ const Product=()=>{
         colors:['Black','Brown',"Navy","Red"],
         images:['/static/images/icons/Teddy.png','/static/images/scroll/scroll2.png','/static/images/icons/Teddy.png']
     }
+    const cards = [
+        {id:'Card1',image:'/static/GreetingCards/Card1.png'},
+        {id:'Card2',image:'/static/GreetingCards/Card2.png'},
+        {id:'Card3',image:'/static/GreetingCards/Card3.png'},
+        {id:'Card4',image:'/static/GreetingCards/Card4.png'},
+        {id:'Card5',image:'/static/GreetingCards/Card5.png'},
+        {id:'Card6',image:'/static/GreetingCards/Card6.png'},
+    ]
     return(
-        <ProductView data={data}></ProductView>
+        <ProductView data={data} cards={cards}></ProductView>
     );
 };
 export default Product;

@@ -4,10 +4,9 @@ import VerticleScroll from './VerticleScroll';
 import ProductInfo from './ProductInfo';
 import { Fragment,useContext,useEffect } from 'react';
 import userCartContext from 'Contexts/CartContext';
+//helper compoenent ( recieves data from parent component after all the fetching and send to chidlren)
+//all the other data processing done here
 const ProductView=(props)=>{
-
-   
-      
     const ctx = useContext(userCartContext);
 
     const { id,longDesc,images, ...remain } = props.data;
@@ -34,7 +33,7 @@ const ProductView=(props)=>{
                 </div>
                 <VerticleScroll data = {props.data.images}></VerticleScroll>
                 <div className={styles.prodInfo}>
-                    <ProductInfo onAddCart={addToCartHandler} data={prodInfo}></ProductInfo>
+                    <ProductInfo onAddCart={addToCartHandler} data={prodInfo} cards={props.cards}></ProductInfo>
                 </div>
             </div>
            

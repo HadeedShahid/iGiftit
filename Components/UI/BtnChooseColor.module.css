@@ -9,6 +9,8 @@
     height: 27px;
     border-right: 1px solid #E0E0E0;
     background-color: #fff;
+    /* margin: 5px 0px; */
+    height: 35px;
 }
 .btn:last-child{
     border-right: none;
@@ -16,6 +18,9 @@
 .cont{
     border: 1px solid #E0E0E0;
     width: fit-content;
-    padding: 2px;
     border-radius: 4px;
+}
+.highlight{
+    background: #F5F5F5;
+    border: 1px solid #616161 !important;
 }
