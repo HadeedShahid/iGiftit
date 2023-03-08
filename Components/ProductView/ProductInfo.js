@@ -7,8 +7,16 @@ import WrapItem from './WrapItem';
 const ProductInfo=(props)=>{
     //do for wrapping and greeting cards
     const[quantity,setQuantity] = useState(1)
+    const[wrap,setWrap] = useState();
+    const[card,setCard] = useState();
     const addCartHandler=()=>{
-        props.onAddCart(quantity);
+       const  dataToSend={
+            quantity:quantity,
+            wrap:wrap,
+            card:card,
+
+        }
+        props.onAddCart(dataToSend);
     }
     const quantityHandler=(event)=>{
         setQuantity(event.target.value);
@@ -30,11 +38,11 @@ const ProductInfo=(props)=>{
                     {props.data.sizes && 
                         <Fragment>
                             <p>Item Size</p>
-                            <BtnChooseColor data={props.data.colors}></BtnChooseColor>
+                            <BtnChooseColor data={props.data.sizes}></BtnChooseColor>
                         </Fragment>
                     }
                 </div>
-                <WrapItem cards={props.cards}></WrapItem>
+                <WrapItem onSelectWrap={(e)=>{setWrap(e)}} onSelectCard={(e)=>{setCard(e)}} wrap={wrap} card={card} cards={props.cards}></WrapItem>
                 <div className={styles.BottomWrapper}>
                     <div className={styles.inputwrap}>
                         <BtnNumeric type={'min'}></BtnNumeric>

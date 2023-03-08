@@ -30,17 +30,20 @@ const GreetingCardModal=(props)=>{
                     <img src={obj.image}></img>
                     <form className={styles.cardInput} onSubmit={(e)=>{
                         e.preventDefault();
-                        console.log("wish",wish)
-                        console.log("name",name)
+                        const l = {image:obj.image,name:name,wish:wish}
+                        props.onSelectCard(l);
+                        props.onClose()
+                        // console.log("wish",wish)
+                        // console.log("name",name)
 
-                        console.log({name,wish})
+                        // console.log({name,wish})
                         // props.onAddGreetCard({name,wish})
                     }}>
                         <label>Full Name</label>
                         <input type='text' onChange={NameHandler}></input>
                         <label>Greeting Wish (optional)</label>
                         <input type='text'  onChange={WishHandler}></input>
-                        <button>Add Greeting Card</button>
+                        <button type="submit">Add Greeting Card</button>
                     </form>
                 </Fragment>
             )
