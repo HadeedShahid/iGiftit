@@ -15,6 +15,11 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/Checkout/OrderConfirmation": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Checkout/OrderConfirmation.js"
+    ],
     "/Homepage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

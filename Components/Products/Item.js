@@ -4,11 +4,14 @@ import Card from '../UI/Card';
 import { Fragment } from 'react';
 import Link from 'next/link';
 const Item=(props)=>{
+    if (props.data==undefined){
+        return;
+    }
     const id = props.data.id;
-    const image = props.data.image;
+    const image = props.data.images[0];
     const name = props.data.name;
     const seller = props.data.seller;
-    const desc = props.data.desc;
+    const desc = props.data.description;
     const price = props.data.price;
 
     const normal = <Card classes={`${styles.card} ${props.classes}`}>

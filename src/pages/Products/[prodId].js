@@ -1,20 +1,24 @@
 import ProductView from "../../../Components/ProductView/ProductView";
 import {useRouter} from 'next/router'
+import { Fragment, useEffect, useState } from "react";
 const Product=()=>{
     const router = useRouter();
     const prodId = router.query.prodId;
+    const [data,setData] = useState(null);
     //fetch the data for the product by id
     //example data (also how the data should look like)
-    const data = {
-        id: '6430yuio34b13078h31',
-        name:'Teddy Bear',
-        desc:'A home to aviation',
-        longDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.',
-        seller:'Al-Fatah',
-        price:'Rs. 2000',
-        colors:['Black','Brown',"Navy","Red"],
-        images:['/static/images/icons/Teddy.png','/static/images/scroll/scroll2.png','/static/images/icons/Teddy.png']
-    }
+    useEffect(()=>{
+        const options={
+            method:"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({id:prodId})
+        }
+    
+        fetch('http://localhost:3000/api/Products/getProductById',options) .then((response) => response.json())
+        .then((data) => {console.log(data.product);setData(data.product)})
+    },[]);
+    
+
     const cards = [
         {id:'Card1',image:'/static/GreetingCards/Card1.png'},
         {id:'Card2',image:'/static/GreetingCards/Card2.png'},
@@ -24,7 +28,9 @@ const Product=()=>{
         {id:'Card6',image:'/static/GreetingCards/Card6.png'},
     ]
     return(
-        <ProductView data={data} cards={cards}></ProductView>
+        <Fragment>
+            {data ?  <ProductView data={data} cards={cards}></ProductView> : <h1>none</h1>}
+        </Fragment>
     );
 };
 export default Product;

@@ -4,11 +4,16 @@ import OrderDetails from './OrderDetails';
 import SavedAddresses from './SavedAddresses';
 
 const DeliveryInformation=(props)=>{
+
+    const ProceedHandler=(data)=>{
+            props.setDeliveryInfoHandler(data)
+    }
+
     return(
         <div className={styles.PageWrap}>
-            <DeliveryForm></DeliveryForm>
+            <DeliveryForm onProceedHandler={ProceedHandler}></DeliveryForm>
             <SavedAddresses></SavedAddresses>
-            <OrderDetails></OrderDetails>
+            <OrderDetails prodData={props.prodData} prodCost={props.prodCost}></OrderDetails>
         </div>
     );
 };

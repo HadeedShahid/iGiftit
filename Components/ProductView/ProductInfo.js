@@ -6,19 +6,23 @@ import styles from './ProductInfo.module.css';
 import WrapItem from './WrapItem';
 const ProductInfo=(props)=>{
     //do for wrapping and greeting cards
-    const[quantity,setQuantity] = useState(1)
+    const[quantity,setQuantity] = useState("1")
     const[wrap,setWrap] = useState();
     const[card,setCard] = useState();
+    const[color,setColor] = useState();
+    const[size,setSize] = useState();
     const addCartHandler=()=>{
        const  dataToSend={
             quantity:quantity,
             wrap:wrap,
             card:card,
-
+            color:color,
+            size:size
         }
         props.onAddCart(dataToSend);
     }
     const quantityHandler=(event)=>{
+        console.log("setting quant", event.target.value)
         setQuantity(event.target.value);
     }
     return(
@@ -32,22 +36,22 @@ const ProductInfo=(props)=>{
                     {props.data.colors && 
                         <Fragment>
                             <p>Item Color</p>
-                            <BtnChooseColor data={props.data.colors}></BtnChooseColor>
+                            <BtnChooseColor data={props.data.colors} onClick = {(e)=>{setColor(e)}}></BtnChooseColor>
                         </Fragment>
                     }
-                    {props.data.sizes && 
+                    {props.data.size && 
                         <Fragment>
                             <p>Item Size</p>
-                            <BtnChooseColor data={props.data.sizes}></BtnChooseColor>
+                            <BtnChooseColor data={props.data.size} onClick = {(e)=>{setSize(e)}}></BtnChooseColor>
                         </Fragment>
                     }
                 </div>
                 <WrapItem onSelectWrap={(e)=>{setWrap(e)}} onSelectCard={(e)=>{setCard(e)}} wrap={wrap} card={card} cards={props.cards}></WrapItem>
                 <div className={styles.BottomWrapper}>
                     <div className={styles.inputwrap}>
-                        <BtnNumeric type={'min'}></BtnNumeric>
-                            <input onChange={quantityHandler} type='number' placeholder={quantity}></input>
-                        <BtnNumeric type={'plus'}></BtnNumeric>
+                        <BtnNumeric onClick={()=>{Number(quantity)==1 ? undefined : setQuantity(Number(quantity)-1)}} type={'min'}></BtnNumeric>
+                            <input onChange={quantityHandler} type='text' value={quantity}></input>
+                        <BtnNumeric onClick={()=>{setQuantity(Number(quantity)+1)}} type={'plus'}></BtnNumeric>
                     </div>  
                     <Button onClick={addCartHandler} class={styles.AddCartBtn}>
                         <div className={styles.Addtocart}>Add to Cart</div>

@@ -1,10 +1,10 @@
 import styles from './PaymentForm.module.css';
 import Button from '../UI/Button';
-const PaymentForm=()=>{
+const PaymentForm=(props)=>{
     return(
         <div className={styles.FormCont}>
-            <div className={styles.title}>Please Enter The Delivery Address</div>
-            <form>
+            <div className={styles.title}>Please Enter Payment Info</div>
+            <form onSubmit={(e)=>{e.preventDefault();props.proceedHandler()}}>
                 <div className={styles.InpWrap}>
                     <label>Full Name</label>
                     <input type='text'></input>

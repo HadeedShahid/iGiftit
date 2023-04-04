@@ -2,5 +2,5 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     column-gap: 50px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }

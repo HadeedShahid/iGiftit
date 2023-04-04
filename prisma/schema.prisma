@@ -32,3 +32,14 @@ model Order{
     date String
     items String
 }
+model Products{
+   id String @id @default(auto()) @map("_id") @db.ObjectId
+   name String
+   description String
+   long_description String
+   seller String
+   price Float
+   colors Json?
+   images Json
+   size Json?
+}

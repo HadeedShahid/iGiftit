@@ -12,6 +12,7 @@ const ProductView=(props)=>{
 
     const { id,longDesc,images, ...remain } = props.data;
     const prodInfo = remain;
+    console.log("info",prodInfo)
     const router = useRouter()
 
     // const addWrapHandler=()=>{}

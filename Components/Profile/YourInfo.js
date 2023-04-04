@@ -5,12 +5,24 @@ import SavedAddresses from './SavedAddresses';
 import SavedPayment from './SavedPayment';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import AddAddress from './AddAddress';
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const YourInfo=(props)=>{
     const [addAddress,setAddAddress] = useState(false);
+    const { data: session } = useSession()
+    const AddAddressHandler=async (data)=>{
+        const options={
+            method:"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:session.user.email,addressToAdd:data})
+        }
+    
+        await fetch('http://localhost:3000/api/Addresses/setAddresses',options).then((response) => response.json())
+        .then((data) => {console.log(data)})
+    }
     return(
         <Fragment>
-        {addAddress && <AddAddress onClose={()=>{setAddAddress(false)}}></AddAddress>}
+        {addAddress && <AddAddress submitHandler={AddAddressHandler} onClose={()=>{setAddAddress(false)}}></AddAddress>}
         <div className={styles.container}>
             <div className={styles.InfoWrap}>
                 <div>

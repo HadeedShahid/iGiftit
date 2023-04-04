@@ -3,7 +3,8 @@ import CardItem from './CardItem';
 import { Fragment } from 'react';
 const SavedAddresses=(props)=>{
    const Addresses = Array.from(props.Addresses).map((addr)=>{
-    return <CardItem  key={Math.random()} classes={styles.card}title={addr.name} detail={addr.city}
+    console.log(addr)
+    return <CardItem  key={Math.random()} classes={styles.card} title={addr.address + ", " + addr.city} detail={addr.number}
     links={[{name:'Edit'},{name:'Remove'}]}
     ></CardItem>
     })

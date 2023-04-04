@@ -8,8 +8,8 @@ export default async function handler(req,res){
         const cartItems = await getCartItems(email);
 
         if (!cartItems){
-            res.status(500).json({message:'Error in getting all orders'})
-            throw new Error('Error in getting all orders');
+            res.status(500).json({message:'Error in getting cartItems'})
+            throw new Error('Error in getting cartItems');
         }
         console.log("cartItems,",cartItems);
 

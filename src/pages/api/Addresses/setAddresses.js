@@ -5,6 +5,7 @@ export default async function handler(req,res){
         if(!req.body){return res.status(404).json({error:'No data'})}
         const{email,addressToAdd} = req.body;
         console.log("email",email)
+        console.log("add to add",addressToAdd)
         const options={
             method:"POST",
             headers:{'Content-Type':'application/json'},
@@ -15,14 +16,14 @@ export default async function handler(req,res){
         // console.log("old Addresses",oldAddresses)
         // console.log(addressToAdd)
 
-        const tempAddressToAdd = JSON.parse(addressToAdd);
+        const tempAddressToAdd = addressToAdd;
         // console.log("temp",tempAddressToAdd);
         oldAddresses.push(tempAddressToAdd);
         const updatedUser = await addAddress(email,oldAddresses);
         if (!updatedUser){
              throw new Error(error);
         }
-        console.log("updateduser,",updatedUser);
+        // console.log("updateduser,",updatedUser);
         res.status(200).json({updatedUser:updatedUser});
 
        

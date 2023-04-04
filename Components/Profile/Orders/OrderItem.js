@@ -2,9 +2,18 @@ import Card from '../../UI/Card';
 import Button from '../../UI/Button';
 import styles from './OrderItem.module.css';
 import OrderCard from './OrderCard';
+import { useEffect, useState } from 'react';
 const OrderItem=(props)=>{
+    const[product,ProductDetail] = useState();
     // console.log(props.data)
-    const orderItems = props.data.items.map((item)=>{
+    useEffect(()=>{
+        // if(props.data){
+        //     fetch('http://localhost:3000/api/Orders/getOrders',options).then(async res=>{
+        //     setOrders((await res.json()).orders);
+        // });
+        // }
+    },[])
+    const orderItems = props.data.items.map((item,idx)=>{
         return (
             <OrderCard margin={styles.margin} key={Math.random()} data={item}></OrderCard>
         );

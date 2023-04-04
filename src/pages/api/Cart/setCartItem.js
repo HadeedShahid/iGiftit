@@ -9,8 +9,8 @@ export default async function handler(req,res){
         const cartItems = await setCartItems(email,cartitem);
 
         if (!cartItems){
-            res.status(500).json({message:'Error in getting all orders'})
-            throw new Error('Error in getting all orders');
+            res.status(500).json({message:'Error in setting cart item'})
+            throw new Error('Error in setting cart item');
         }
         console.log("new cartItems,",cartItems);
 
