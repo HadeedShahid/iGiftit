@@ -6,11 +6,11 @@ const OrderCard=(props)=>{
     return (<Card classes={`${styles.DetailCard} ${props.margin}`}>
                     <div className={styles.NamePrice}>
                         <span className={styles.ProdTitle}>{props.data.name}</span>
-                        <span className={styles.ProdTitle}>Rs. {props.data.price}</span>
+                        <span className={styles.ProdTitle}>Rs. {props.price}</span>
                     </div>
                     <div className={styles.ProdDetail}>
-                        <span>Qty: {props.data.QTY}</span>    
-                        <span>Color : {props.data.Color}</span> 
+                        <span>Qty: {props.data.quantity}</span>    
+                        <span>Color : {props.data.color}</span> 
                     </div>
                     
                     <div className={styles.CustomizeWrap}>

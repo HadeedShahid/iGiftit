@@ -115,7 +115,7 @@ const Checkout=()=>{
         console.log("pressed")
         const email = session.user.email;
         const status = 'In Transit';
-        const amount = (await ctx.totalAmount()).toString();
+        const amount = ((await ctx.totalAmount())+200).toString();
         const date = getdate();
         const items = await getProducts()
         
@@ -123,38 +123,30 @@ const Checkout=()=>{
         
         console.log("new order func",newOrder);
 
-        router.push({
-            pathname: '/Checkout/OrderConfirmation',
-            query: { 
-                data: await JSON.stringify(productData),
-                cost:total
-            }})
-        // const options={
-        //     method:"POST",
-        //     headers:{'Content-Type':'application/json'},
-        //     body:JSON.stringify({orderToAdd:newOrder})
-        // }
-        // await fetch("http://localhost:3000/api/Orders/setOrders",options)
-        // .then((response) => {
-        //     response.json()
-        //     if (response.ok){
-        //         setOrderPlaced(true);
-               
-                  
-        //         router.push({
-        //             pathname: 'pathname',
-        //             query: queryData,
-        //         },
-        //         'pathname' // use this to clear query strings like key value from URL
-        //         );
-        //     }
-        
-        // })
-        // .then((data) =>
-        //     {
-        //         console.log("in log",data)
-        //     }
-        // );
+       
+        const options={
+            method:"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({orderToAdd:newOrder})
+        }
+        await fetch("http://localhost:3000/api/Orders/setOrders",options)
+        .then((response) => {
+            response.json()
+            if (response.ok){
+                setOrderPlaced(true);
+                router.push({
+                    pathname: '/Checkout/OrderConfirmation',
+                    query: { 
+                        data: JSON.stringify(productData),
+                        cost:total
+                    }})
+            } 
+        })
+        .then((data) =>
+            {
+                console.log("in log",data)
+            }
+        );
 
     }
     console.log(ctx.cartItems)

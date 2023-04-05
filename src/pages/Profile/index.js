@@ -22,6 +22,7 @@ const ViewProfile=()=>{
     
 
     const addrs = useEffect(() => {
+        // console.log("in use effect")
         const email = session.user.email
         const options={
             method:"POST",
@@ -32,9 +33,11 @@ const ViewProfile=()=>{
             setAddresses((await res.json()).message);
         });
         fetch('http://localhost:3000/api/Orders/getOrders',options).then(async res=>{
-            setOrders((await res.json()).orders);
+            const retOrders = (await res.json()).orders
+            setOrders(retOrders)
+            console.log("ret products",retOrders)
         });
-        console.log("in ude effect")
+        // console.log("in ude effect")
         // console.log("addresses",addresses)
       },[]);
     return(

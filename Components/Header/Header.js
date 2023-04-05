@@ -1,10 +1,12 @@
 import Cart from "Components/Cart/Cart";
 import React, { Fragment, useState } from "react";
 import styles from './Header.module.css';
+import { useRouter } from "next/router";
 const Header=()=>{
+    const router = useRouter()
     const [cartClick,setCartClick] = useState();
     const profileClick = () => {
-        console.log("in route")
+        router.push('/Profile');
     }
     const cartClickHandler = () => {
         setCartClick(true);
@@ -30,7 +32,7 @@ const Header=()=>{
                         <button>
                             <img src='/static/images/icons/CalenderIcon.svg' alt='calender icon'></img>
                         </button>
-                        <button onClick={profileClick} >
+                        <button type='button' onClick={profileClick} >
                             <img src='/static/images/icons/UserIcon.svg' alt='user icon'></img>
                         </button>
                 </div>

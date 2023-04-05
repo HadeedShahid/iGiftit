@@ -4,20 +4,43 @@ import styles from './OrderItem.module.css';
 import OrderCard from './OrderCard';
 import { useEffect, useState } from 'react';
 const OrderItem=(props)=>{
-    const[product,ProductDetail] = useState();
+    // const[product,ProductDetail] = useState();
+    const [orderItems,setOrderItems] = useState()
     // console.log(props.data)
     useEffect(()=>{
-        // if(props.data){
-        //     fetch('http://localhost:3000/api/Orders/getOrders',options).then(async res=>{
-        //     setOrders((await res.json()).orders);
-        // });
-        // }
-    },[])
-    const orderItems = props.data.items.map((item,idx)=>{
-        return (
-            <OrderCard margin={styles.margin} key={Math.random()} data={item}></OrderCard>
-        );
-    });
+
+        if (props.data) {
+            const getOrderItems = async () => {
+              const orderItems = await Promise.all(
+                props.data.items.map(async (item, idx) => {
+                  const prodId = item.prodId;
+                  const options = {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id: prodId }),
+                  };
+                  const res = await fetch(
+                    "http://localhost:3000/api/Products/getProductPriceById",
+                    options
+                  );
+                  const data = await res.json();
+                  const price = data.price;
+                  return (
+                    <OrderCard
+                      margin={styles.margin}
+                      key={Math.random()}
+                      data={item}
+                      price={price*item.quantity}
+                    ></OrderCard>
+                  );
+                })
+              );
+              setOrderItems(orderItems);
+            };
+            getOrderItems();
+          }
+        }, [props.data]);
+    
     return(
         <Card classes={styles.OuterCard}>
             <div className={styles.OrderInfoWrap}>
