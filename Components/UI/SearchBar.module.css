@@ -1,0 +1,30 @@
+.inp{
+    border: none;
+    margin-left: 30px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #757575;
+    width: 90%;
+    /* border: 2px solid red; */
+}
+.cont{
+    padding: 8px 16px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    max-width: 440px;
+    width: 100%;
+    position: relative;
+    /* border: 2px solid blue; */
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.search{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(0,-50%);
+    /* border: 2px solid black; */
+}

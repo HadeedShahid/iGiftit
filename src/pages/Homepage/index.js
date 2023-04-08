@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import Header from '../../../Components/Header/Header'
 import HomeGrid from '../../../Components/Products/HomeGrid';
 import Recommendation from '../../../Components/Products/Recommendation';
+import SearchBar from 'Components/UI/SearchBar';
 const Homepage=()=>{
     const[data,setData] = useState(undefined)
     // const data = {
@@ -29,6 +30,7 @@ const Homepage=()=>{
         <Fragment>
             {/* <h1>{data?"tr":"fa"}</h1> */}
             <Header></Header>
+            <SearchBar></SearchBar>
             <Recommendation data={data?[data[0],data[1]]:{}} questions={questions}></Recommendation>
             <HomeGrid data={data?data:{}}></HomeGrid>
         </Fragment>

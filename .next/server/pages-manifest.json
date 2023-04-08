@@ -2,11 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/Cart/getCartItems": "pages/api/Cart/getCartItems.js",
+  "/GetStarted": "pages/GetStarted.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/Homepage": "pages/Homepage.js",
-  "/api/Addresses/getAddresses": "pages/api/Addresses/getAddresses.js",
-  "/Profile": "pages/Profile.js",
-  "/api/Orders/getOrders": "pages/api/Orders/getOrders.js",
-  "/api/Products/getProductPriceById": "pages/api/Products/getProductPriceById.js"
+  "/api/Cart/getCartItems": "pages/api/Cart/getCartItems.js"
 }

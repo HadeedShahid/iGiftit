@@ -15,15 +15,10 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/Homepage": [
+    "/GetStarted": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Homepage.js"
-    ],
-    "/Profile": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Profile.js"
+      "static/chunks/pages/GetStarted.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

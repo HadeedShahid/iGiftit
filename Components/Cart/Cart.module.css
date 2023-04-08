@@ -15,7 +15,7 @@
     z-index: 5;
     background: #FFFFFF;
     /* box-shadow: 8px 3px 22px 10px rgba(150, 150, 150, 0.11); */
-    border-radius: 8px 0px 8px 8px;
+    border-radius: 8px 8px 8px 8px;
     padding: 32px;
 }
 .card{
