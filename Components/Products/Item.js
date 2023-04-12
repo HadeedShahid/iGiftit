@@ -34,10 +34,8 @@ const Item=(props)=>{
                     <span>Gift Item</span>
                     <img src='/static/images/icons/trailingIcon.png'></img>
                     </Button>
-                </Link>
-                
+                </Link>      
             </div>
-
         </Card>
     const custom = 
     <Card classes={`${styles.customCard} ${props.classes}`}>

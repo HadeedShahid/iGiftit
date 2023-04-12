@@ -1,24 +1,29 @@
 import Banner from './Banner';
 import styles from './HomeGrid.module.css';
 import Item from './Item';
+import HGridItem from './HGridItem';
 // import Banner from '../UI/Banner';
 const HomeGrid=(props)=>{
     // console.log("in homegrid",props.data)
     return(
 
         <div className={styles.layout}>
-            <Item data={props.data[4]} type={'gridItem'} classes={styles.card}></Item>
+            <HGridItem data={props.data[3]} classes={styles.card}></HGridItem>
+            <HGridItem data={props.data[1]} classes={styles.card}></HGridItem>
+            <HGridItem data={props.data[2]} classes={styles.card}></HGridItem>
+            <HGridItem data={props.data[3]} classes={styles.card}></HGridItem>
+            {/* <Item data={props.data[3]} type={'gridItem'} classes={styles.card}></Item>
             <Item data={props.data[1]} type={'gridItem'} classes={styles.card}></Item>
             <Item data={props.data[2]} type={'gridItem'} classes={styles.card}></Item>
-            <Item data={props.data[3]} type={'gridItem'} classes={styles.card}></Item>
-            <Item data={props.data[2]} type={'gridItem'} classes={styles.card}></Item>
-            <Item data={props.data[3]} type={'gridItem'} classes={styles.card}></Item>
-            <Item data={props.data[1]} type={'gridItem'} classes={styles.card}></Item>
-            <Item data={props.data[0]} type={'gridItem'} classes={styles.card}></Item>
+            <Item data={props.data[3]} type={'gridItem'} classes={styles.card}></Item> */}
+            <HGridItem data={props.data[2]} classes={styles.card}></HGridItem>
+            <HGridItem data={props.data[3]} classes={styles.card}></HGridItem>
+            <HGridItem data={props.data[1]} classes={styles.card}></HGridItem>
+            <HGridItem data={props.data[0]} classes={styles.card}></HGridItem>
             <Banner class={styles.BanClass} image={'/static/images/icons/Banner.png'}></Banner>
             <Item data={props.data[3]} classes={`${styles.twoCols} ${styles.card}`} type={'custom'}></Item>
-            <Item data={props.data[1]} type={'gridItem'} classes={styles.card}></Item>
-            <Item data={props.data[2]} type={'gridItem'} classes={styles.card}></Item>
+            <HGridItem data={props.data[1]} type={'gridItem'} classes={styles.card}></HGridItem>
+            <HGridItem data={props.data[2]} type={'gridItem'} classes={styles.card}></HGridItem>
         </div>
 
 

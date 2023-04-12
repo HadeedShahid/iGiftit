@@ -38,7 +38,7 @@ const ProductView=(props)=>{
             <div className={styles.wrapper}>
                 <div className={styles.TextWrap}>
                     <div className={styles.heading}>Product Description</div>
-                    <div className={styles.desc}>{props.data.longDesc}</div>
+                    <div className={styles.desc}>{props.data.long_description}</div>
                 </div>
                 <VerticleScroll data = {props.data.images}></VerticleScroll>
                 <div className={styles.prodInfo}>

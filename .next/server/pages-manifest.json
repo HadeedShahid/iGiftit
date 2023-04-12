@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/GetStarted": "pages/GetStarted.js",
+  "/Homepage": "pages/Homepage.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
   "/api/Cart/getCartItems": "pages/api/Cart/getCartItems.js"
 }

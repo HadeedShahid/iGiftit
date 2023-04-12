@@ -36,6 +36,7 @@
     grid-column-start: 1;
     grid-column-end: 10;
     width: 100%;
+    /* height: 100%; */
 }
 .secondRecommend{
     grid-column-start: 10;

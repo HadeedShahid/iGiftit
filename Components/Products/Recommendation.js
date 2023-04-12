@@ -3,6 +3,7 @@ import Item from "../Products/Item";
 import Questions from "../Questions/Questions";
 import styles from './Recommendation.module.css';
 import Input from '../UI/Input';
+import RecItem from "./RecItem";
 // import Input from "../UI/Input";
 // import Questions from "../UI/Questions";
 const Recommendation=(props)=>{
@@ -16,8 +17,10 @@ const Recommendation=(props)=>{
         <div className={styles.hi}>
             <div className={styles.heading}>Recommendations</div>
             <div className={styles.grid}>
-                <Item  data={prod1} classes={`${styles.firstRecommend} ${styles.itemCard}`}></Item>
-                <Item data={prod2} classes={`${styles.secondRecommend} ${styles.itemCard}`}></Item>
+                {/* <Item  data={prod1} classes={`${styles.firstRecommend} ${styles.itemCard}`}></Item> */}
+                <RecItem data={prod1} classes={`${styles.firstRecommend} ${styles.itemCard}`}></RecItem>
+                <RecItem data={prod2} classes={`${styles.secondRecommend} ${styles.itemCard}`}></RecItem>
+                {/* <Item data={prod2} classes={`${styles.secondRecommend} ${styles.itemCard}`}></Item> */}
                 <div className={styles.question}>
                     <Questions data={questions} classes={`${styles.colorCard} ${styles.largeCard} ${styles.propClass} ${styles.height}`}></Questions>
                     <Input  classes={`${styles.colorCard} ${styles.smallCard}`}></Input>
