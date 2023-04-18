@@ -20,7 +20,7 @@ export default async function handler(req,res){
             throw new Error('Error in getting all products');
         }
         // console.log("new Order,",JSON.stringify(newOrder));
-
+        console.log("***Fetched products",products)
         res.status(200).json({"products":products});
 
        
