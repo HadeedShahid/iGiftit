@@ -61,8 +61,12 @@ export async function getServerSideProps() {
     // const fetchedData =  await fetch(`http://igiftit.vercel.app/api/Products/getProducts`,options) .then((response) => response.json())
     // .then((data) => {console.log(data.products); return data.products})
 
-    const fetchedData = await prisma.products.findMany()
-    
+    try {
+        const fetchedData = await prisma.products.findMany()
+    } catch (error) {
+        console.log("*****error",error);
+    }
+
     console.log("*****url",vercelUrl);
     console.log("****data",fetchedData)
     // Pass the fetched data as props to the page component
