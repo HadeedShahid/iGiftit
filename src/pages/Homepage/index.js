@@ -3,8 +3,8 @@ import Header from '../../../Components/Header/Header'
 import HomeGrid from '../../../Components/Products/HomeGrid';
 import Recommendation from '../../../Components/Products/Recommendation';
 import SearchBar from 'Components/UI/SearchBar';
-const Homepage=()=>{
-    const[data,setData] = useState(undefined)
+const Homepage=(props)=>{
+    const data = props.products
     // const data = {
     //     id: '6430yuio34b13078h31',
     //     name:'Teddy Bear',
@@ -18,13 +18,16 @@ const Homepage=()=>{
         options:['< 16 Years','< 16-24 Years','< 25-40 Years','> 40 Years']
     };
     useEffect(() => {
-        const options={
-            method:"POST",
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({})
-        }
-        fetch('http://localhost:3000/api/Products/getProducts',options) .then((response) => response.json())
-        .then((data) => {console.log(data.products);setData(data.products)})
+        // const options={
+        //     method:"POST",
+        //     headers:{'Content-Type':'application/json'},
+        //     body:JSON.stringify({})
+        // }
+        // console.log("url",process.env.VERCEL_URL)
+        // // fetch('http://localhost:3000/api/Products/getProducts',options) .then((response) => response.json())
+        // // .then((data) => {console.log(data.products);setData(data.products)})
+        // fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options) .then((response) => response.json())
+        // .then((data) => {console.log(data.products);setData(data.products)})
     }, []);
     return(
         <Fragment>
@@ -36,4 +39,31 @@ const Homepage=()=>{
         </Fragment>
     );
 };
+
+
+export async function getServerSideProps() {
+    // Access environment variables using process.env on server-side
+    const vercelUrl = process.env.VERCEL_URL;
+    // Fetch data using environment variables
+    const options={
+        method:"POST",
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({})
+    }
+    console.log("url",process.env.VERCEL_URL)
+    // fetch('http://localhost:3000/api/Products/getProducts',options) .then((response) => response.json())
+    // .then((data) => {console.log(data.products);setData(data.products)})
+    const fetchedData =  await fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options) .then((response) => response.json())
+    .then((data) => {console.log(data.products); return data.products})
+  
+    console.log("*****url",vercelUrl);
+    console.log("****data",fetchedData)
+    // Pass the fetched data as props to the page component
+    return {
+      props: {
+        products: fetchedData,
+      },
+    };
+  }
+  
 export default Homepage;

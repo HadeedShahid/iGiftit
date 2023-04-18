@@ -17,7 +17,10 @@ const GetStarted=()=>{
         ctx.addRecItem(obj);
         setIndex(()=>{return index+1})
     }
-    const questions=[<Q1 addAnswer={addAnswerHandler}></Q1>,<Q2 addAnswer={addAnswerHandler}></Q2>,<Q3 addAnswer={addAnswerHandler}></Q3>,<Q4 addAnswer={addAnswerHandler}></Q4>]
+    const questions=[<Q1 key={Math.random()} addAnswer={addAnswerHandler}></Q1>,
+                     <Q2 key={Math.random()} addAnswer={addAnswerHandler}></Q2>,
+                     <Q3 key={Math.random()} addAnswer={addAnswerHandler}></Q3>,
+                     <Q4 key={Math.random()} addAnswer={addAnswerHandler}></Q4>]
     
     useEffect(()=>{
         if (index>3){
