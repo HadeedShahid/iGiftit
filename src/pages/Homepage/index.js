@@ -53,9 +53,13 @@ export async function getServerSideProps() {
     console.log("url",process.env.VERCEL_URL)
     // fetch('http://localhost:3000/api/Products/getProducts',options) .then((response) => response.json())
     // .then((data) => {console.log(data.products);setData(data.products)})
-    const fetchedData =  await fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options) .then((response) => response.json())
-    .then((data) => {console.log(data.products); return data.products})
+
+    // const fetchedData =  await fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options) .then((response) => response.json())
+    // .then((data) => {console.log(data.products); return data.products})
   
+    const fetchedData =  await fetch(`http://igiftit.vercel.app/api/Products/getProducts`,options) .then((response) => response.json())
+    .then((data) => {console.log(data.products); return data.products})
+
     console.log("*****url",vercelUrl);
     console.log("****data",fetchedData)
     // Pass the fetched data as props to the page component
