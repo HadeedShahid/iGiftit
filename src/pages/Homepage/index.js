@@ -3,7 +3,7 @@ import Header from '../../../Components/Header/Header'
 import HomeGrid from '../../../Components/Products/HomeGrid';
 import Recommendation from '../../../Components/Products/Recommendation';
 import SearchBar from 'Components/UI/SearchBar';
-import prisma from 'lib/prisma';
+// import prisma from 'lib/prisma';
 const Homepage=(props)=>{
     const data = props.products
     // const data = {
@@ -55,7 +55,7 @@ export async function getServerSideProps() {
     // fetch('http://localhost:3000/api/Products/getProducts',options) .then((response) => response.json())
     // .then((data) => {console.log(data.products);setData(data.products)})
 
-    const fetchedData =  await fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options) .then((response) => response.json())
+    const fetchedData =  await fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options).then(async(response) => await response.json())
     .then((data) => {console.log(data.products); return data.products})
   
     // const fetchedData =  await fetch(`http://igiftit.vercel.app/api/Products/getProducts`,options) .then((response) => response.json())
