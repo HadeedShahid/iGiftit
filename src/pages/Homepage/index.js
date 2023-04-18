@@ -47,7 +47,7 @@ export async function getServerSideProps() {
     const vercelUrl = process.env.VERCEL_URL;
     // Fetch data using environment variables
     const options={
-        // method:"POST",
+        method:"POST",
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({})
     }
