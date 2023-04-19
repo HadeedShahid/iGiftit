@@ -38,12 +38,5 @@ const SignupModal=(props)=>{
         </Fragment>
     );
 };
-export async function getServerSideProps() {
-    const vercelUrl = process.env.VERCEL_URL;
-    return {
-      props: {
-        url: vercelUrl,
-      },
-    };
-  }
+
 export default SignupModal;
