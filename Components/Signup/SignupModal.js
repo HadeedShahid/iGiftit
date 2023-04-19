@@ -32,7 +32,7 @@ const SignupModal=(props)=>{
         
     }
     const signupWithGoogleHandler=async()=>{
-        signIn('google',{callbackUrl:"http://localhost:3000/LandingPage"});
+        signIn('google',{callbackUrl:`http://${props.url}/LandingPage`});
     }
     return(
         <Fragment>
