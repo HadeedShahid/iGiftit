@@ -15,7 +15,8 @@ const SignupModal=(props)=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(data)
         }
-
+        console.log("public vercel",process.env.VERCEL_URL)
+        console.log("normal vercel",process.env.NEXT_PUBLIC_VERCEL_URL)
         await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/auth/signup`,options).then(res=>{res.json()}).then(data=>{
             // if (data){router.push(`http://${process.env.VERCEL_URL}/LandingPage`)}
         })
