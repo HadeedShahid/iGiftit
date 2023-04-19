@@ -16,8 +16,8 @@ const SignupModal=(props)=>{
             body:JSON.stringify(data)
         }
 
-        await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/auth/signup`,options).then(res=>{res.json()}).then(data=>{
-            if (data){router.push(`http://${process.env.VERCEL_URL}/LandingPage`)}
+        await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/auth/signup`,options).then(res=>{res.json()}).then(data=>{
+            // if (data){router.push(`http://${process.env.VERCEL_URL}/LandingPage`)}
         })
     }
     const signupWithGoogleHandler=async()=>{
