@@ -75,7 +75,7 @@ export default async function handler(req, res) {
         if (error) {
           throw new Error(error);
         }
-        console.log("****user",user)
+        // console.log("****user",user)
         return res.status(201).json({ message: 'User created successfully', user });
       } catch (error) {
         console.log(error);
