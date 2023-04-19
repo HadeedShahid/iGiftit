@@ -17,7 +17,7 @@ const SignupModal=(props)=>{
         }
         // console.log("public vercel",process.env.VERCEL_URL)
         console.log("normal vercel",props.url)
-        await fetch(`https://${props.url}/api/auth/signup`,options).then(res=>{res.json()}).then(data=>{
+        await fetch(`https://igiftit.vercel.app/api/auth/signup`,options).then(res=>{res.json()}).then(data=>{
             // if (data){router.push(`http://${process.env.VERCEL_URL}/LandingPage`)}
         })
     }
