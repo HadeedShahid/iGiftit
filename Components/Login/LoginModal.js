@@ -13,7 +13,7 @@ const LoginModal=(props)=>{
             redirect:false,
             email:data.email,
             password:data.password,
-            callbackUrl:"http://localhost:3000/Profile"
+            callbackUrl:`http://${props.url}/Profile`
         })
         console.log(status);
         if (status.ok){
@@ -22,7 +22,7 @@ const LoginModal=(props)=>{
         
     }
     const signinWithGoogleHandler = async ()=>{
-        signIn('google',{callbackUrl:"http://localhost:3000/LandingPage"});
+        signIn('google',{callbackUrl:`http://${props.url}/LandingPage`});
 
 
         // signInWithPopup(auth,googleProvider).then((res)=>{

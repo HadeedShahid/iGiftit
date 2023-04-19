@@ -20,7 +20,7 @@ const Authenticate=(props)=>{
             <button onClick={()=>{setLoginPressed(true)}}>Login</button>
             <button onClick={()=>{setSignUpPressed(true)}}>Signup</button>
             {signUpPressed && <SignupModal url = {props.url} onClose={ModalHandler} > </SignupModal>}
-            {LoginPressed && <LoginModal onClose={ModalHandler} > </LoginModal>}
+            {LoginPressed && <LoginModal url = {props.url} onClose={ModalHandler} > </LoginModal>}
         </Fragment>
     );
 };
