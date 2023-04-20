@@ -14,7 +14,7 @@ const Product=()=>{
             body:JSON.stringify({id:prodId})
         }
     
-        fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProductById`,options) .then((response) => response.json())
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProductById`,options) .then((response) => response.json())
         .then((data) => {console.log(data.product);setData(data.product)})
     },[]);
     

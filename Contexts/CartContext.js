@@ -5,7 +5,9 @@ const userCartContext = createContext({
   totalAmount: ()=>{},
   addCartItem: async (item)=>{},
   removeCartItem: async (id)=>{},
-  clearCart: async()=>{}
+  clearCart: async()=>{},
+  decrementQuantity:async (idx)=>{},
+  updateCart:async(items)=>{},
 });
 
 export const CartContextProvider=(props)=>{
@@ -25,7 +27,35 @@ export const CartContextProvider=(props)=>{
             body:JSON.stringify({email:email,cartitem:newArray})
         }
         console.log("the bozyyy",options.body)
-        await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/setCartItem`,options).then(res=>{res.json()}).then(data=>{
+        await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/setCartItem`,options).then(res=>{res.json()}).then(data=>{
+            if (data){console.log("success")}
+        })
+    }
+
+    const decrementQuantityHandler=async(idx)=>{
+        const updatedItems = [...cartItems];
+        const key = Object.keys(updatedItems[idx])[0]
+        // console.log("key",key)
+        // console.log("items", updatedItems[idx][key].quantity)
+        
+        if (updatedItems[idx][key].quantity-1==0){
+            updatedItems.splice(idx, 1);
+        }
+        else{updatedItems[idx][key].quantity = updatedItems[idx][key].quantity-1;}
+        setCartItems(updatedItems);
+        console.log("updated items",updatedItems)
+        updateCartHandler(updatedItems)
+
+    }
+    const updateCartHandler=async(items)=>{
+        const email = session.user.email;
+        const options={
+            method:"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:email,cartitem:items})
+        }
+        console.log("the bozyyy",options.body)
+        await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/setCartItem`,options).then(res=>{res.json()}).then(data=>{
             if (data){console.log("success")}
         })
     }
@@ -37,7 +67,7 @@ export const CartContextProvider=(props)=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email:email})
         }
-        fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/emptyCart`,options)
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/emptyCart`,options)
         .then((response) => response.json())
         .then((data) => { setCartItems(data.cartItems);console.log("empty cart",data.cartItems)});
 
@@ -51,7 +81,7 @@ export const CartContextProvider=(props)=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email:email})
         }
-        fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItems`,options)
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItems`,options)
         .then((response) => response.json())
         .then((data) => { setCartItems(data.cartItems);console.log("fetched data",data.cartItems)});
     }
@@ -70,7 +100,7 @@ export const CartContextProvider=(props)=>{
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({items:cartItems})
             }
-            const productNames =  await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
+            const productNames =  await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
             .then((response) => response.json())
             .then((data) =>
                 {
@@ -115,7 +145,9 @@ export const CartContextProvider=(props)=>{
             addCartItem: addItemHandler,
             removeCartItem: removeItemHandler,
             totalAmount:totalAmountHandler,
-            clearCart:clearCartHandler}
+            clearCart:clearCartHandler,
+            decrementQuantity:decrementQuantityHandler,
+            updateCart:updateCartHandler}
          }>
             {props.children}
         </userCartContext.Provider>

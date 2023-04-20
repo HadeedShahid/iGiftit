@@ -44,20 +44,20 @@ const Homepage=(props)=>{
 
 export async function getServerSideProps() {
     // Access environment variables using process.env on server-side
-    const vercelUrl = process.env.VERCEL_URL;
+    const vercelUrl = process.env.NEXT_PUBLIC_CUSTOM_URL;
     // Fetch data using environment variables
     const options={
         method:"GET",
         headers:{'Content-Type':'application/json'}
         // body:JSON.stringify({})
     }
-    console.log("url",process.env.VERCEL_URL)
+    console.log("url",process.env.NEXT_PUBLIC_CUSTOM_URL)
     // fetch('http://localhost:3000/api/Products/getProducts',options) .then((response) => response.json())
     // .then((data) => {console.log(data.products);setData(data.products)})
 
     let fetchedData = {}
     try {
-        const response = await fetch(`${process.env.PROTOCOL}://${process.env.VERCEL_URL}/api/Products/getProducts`,options);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProducts`,options);
         const jsonData = await response.json();
         fetchedData = jsonData.products;
     } catch (error) {

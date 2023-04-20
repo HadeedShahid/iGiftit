@@ -13,7 +13,7 @@ const LoginModal=(props)=>{
             redirect:false,
             email:data.email,
             password:data.password,
-            callbackUrl:`${process.env.PROTOCOL}://${props.url}/Profile`
+            callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/Profile`
         })
         console.log(status);
         if (status.ok){
@@ -22,7 +22,7 @@ const LoginModal=(props)=>{
         
     }
     const signinWithGoogleHandler = async ()=>{
-        signIn('google',{callbackUrl:`${process.env.PROTOCOL}://${props.url}/LandingPage`});
+        signIn('google',{callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/LandingPage`});
 
 
         // signInWithPopup(auth,googleProvider).then((res)=>{

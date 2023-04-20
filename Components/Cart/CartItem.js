@@ -24,7 +24,7 @@ const CartItem=(props)=>{
 
     return(
         <div className={styles.card}>
-            <div className={styles.cross}>
+            <div onClick={props.onCross} className={styles.cross}>
                 <img src='/static/images/icons/cross.svg'></img>
             </div>
             <div className={styles.img_cont}>

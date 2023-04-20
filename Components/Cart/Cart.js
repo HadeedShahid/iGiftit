@@ -24,7 +24,7 @@ const Cart=(props)=>{
                 body:JSON.stringify({items:ctx.cartItems})
             }
 
-            await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
+            await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
             .then((response) => response.json())
             .then((data) => setProductData(
                 ()=>{
@@ -36,7 +36,7 @@ const Cart=(props)=>{
                         const it = (ctx.cartItems[i])
                         // console.log("it",it)
                         const alias = Object.values(it)[0]
-                        // console.log("alias",alias) 
+                        // console.log("alias",value.id) 
                         cost += Number(value.price*alias.quantity)
                         final.push({
                             image:(value.images)[0],
@@ -58,17 +58,21 @@ const Cart=(props)=>{
         }
         fetchData();  
         // console.log(productData)          
-    },[])
+    },[ctx.cartItems])
 
+    
     return (
         <Fragment>
             <div className={styles.backdrop} onClick={props.onClose}></div>
             <div className={styles.cont}>
                 <div className={styles.yourCart}>Your Cart</div>
                 <Card classes={styles.card}>
-                    {productData ? productData.map((item)=>{
-                        // console.log("doning",item);
-                        return <CartItem key={Math.random()} data={item}></CartItem>
+                    {productData ? productData.map((item,idx)=>{
+                        console.log("doning",item);
+                        // console.log("idx",idx);
+                        return <CartItem onCross={()=>{
+                            ctx.decrementQuantity(idx)
+                        }}  key={Math.random()} data={item}></CartItem>
                     })  : undefined}
                 </Card>
                 <div className={styles.total}>Cart Total: Rs. {total}<span>Excluding Delivery Charges</span></div>

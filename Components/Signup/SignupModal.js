@@ -19,12 +19,12 @@ const SignupModal=(props)=>{
 
 
         // console.log("normal vercel",props.url)
-        await fetch(`${process.env.PROTOCOL}://${props.url}/api/auth/signup`,options)
+        await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/auth/signup`,options)
         .then(res => res.json())
         .then(data => {
             console.log("***data", data);
             if (data) {
-                router.push(`${process.env.PROTOCOL}://${props.url}/LandingPage`);
+                router.push(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/LandingPage`);
             }
         });
 
@@ -32,7 +32,7 @@ const SignupModal=(props)=>{
         
     }
     const signupWithGoogleHandler=async()=>{
-        signIn('google',{callbackUrl:`${process.env.PROTOCOL}://${props.url}/LandingPage`});
+        signIn('google',{callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/LandingPage`});
     }
     return(
         <Fragment>

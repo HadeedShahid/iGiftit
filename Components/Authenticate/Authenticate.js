@@ -19,8 +19,8 @@ const Authenticate=(props)=>{
             <div>{session ? <h1>{session.user.email}</h1> : <h1>Not logged in</h1>}</div>
             <button onClick={()=>{setLoginPressed(true)}}>Login</button>
             <button onClick={()=>{setSignUpPressed(true)}}>Signup</button>
-            {signUpPressed && <SignupModal url = {props.url} onClose={ModalHandler} > </SignupModal>}
-            {LoginPressed && <LoginModal url = {props.url} onClose={ModalHandler} > </LoginModal>}
+            {signUpPressed && <SignupModal onClose={ModalHandler} > </SignupModal>}
+            {LoginPressed && <LoginModal onClose={ModalHandler} > </LoginModal>}
         </Fragment>
     );
 };

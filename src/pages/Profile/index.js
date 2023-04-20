@@ -29,10 +29,10 @@ const ViewProfile=()=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email})
         }
-        fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/getAddresses`,options).then(async res=>{
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/getAddresses`,options).then(async res=>{
             setAddresses((await res.json()).message);
         });
-        fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/getOrders`,options).then(async res=>{
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/getOrders`,options).then(async res=>{
             const retOrders = (await res.json()).orders
             setOrders(retOrders)
             console.log("ret products",retOrders)
@@ -56,6 +56,7 @@ const ViewProfile=()=>{
 };
 export async function getServerSideProps({req}){
     const session = await getSession({req})
+    console.log("Session",req)
     if (!session){
         return{redirect:{
             destination:'/LandingPage',
