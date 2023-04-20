@@ -24,9 +24,11 @@ const CartItem=(props)=>{
 
     return(
         <div className={styles.card}>
-            <div onClick={props.onCross} className={styles.cross}>
+            {   props.cart ?
+                <div onClick={props.onCross} className={styles.cross}>
                 <img src='/static/images/icons/cross.svg'></img>
-            </div>
+            </div>:undefined
+            }
             <div className={styles.img_cont}>
                 <img className={styles.prod_img} src={image} ></img>
                 <div className={styles.prod_quant}>{quantity}</div>

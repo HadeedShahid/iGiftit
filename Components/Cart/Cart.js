@@ -70,7 +70,7 @@ const Cart=(props)=>{
                     {productData ? productData.map((item,idx)=>{
                         console.log("doning",item);
                         // console.log("idx",idx);
-                        return <CartItem onCross={()=>{
+                        return <CartItem cart={1} onCross={()=>{
                             ctx.decrementQuantity(idx)
                         }}  key={Math.random()} data={item}></CartItem>
                     })  : undefined}
