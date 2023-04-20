@@ -77,7 +77,7 @@ const Checkout=()=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({items:ctx.cartItems})
         }
-        const productNames =  await fetch(`http://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
+        const productNames =  await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
         .then((response) => response.json())
         .then((data) =>
             {
