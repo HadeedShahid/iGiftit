@@ -20,7 +20,7 @@ const OrderItem=(props)=>{
                     body: JSON.stringify({ id: prodId }),
                   };
                   const res = await fetch(
-                    `https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProductPriceById`,
+                    `${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProductPriceById`,
                     options
                   );
                   const data = await res.json();

@@ -10,6 +10,18 @@
     padding: 16px;
     min-width: 500px;
     margin-bottom: 16px;
+    position: relative;
+}
+.cross{
+    position: absolute;
+    
+    background: #FF0000;
+    border-radius: 100px;
+}
+.cross img{
+    transform: rotate(45deg);
+    width: 8px;
+    height: 8px;
 }
 .img_cont{
     position: relative;

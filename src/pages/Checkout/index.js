@@ -27,7 +27,7 @@ const Checkout=()=>{
                 body:JSON.stringify({items:ctx.cartItems})
             }
 
-            await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
+            await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
             .then((response) => response.json())
             .then((data) => setProductData(
                 ()=>{
@@ -77,7 +77,7 @@ const Checkout=()=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({items:ctx.cartItems})
         }
-        const productNames =  await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
+        const productNames =  await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
         .then((response) => response.json())
         .then((data) =>
             {
@@ -128,7 +128,7 @@ const Checkout=()=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({orderToAdd:newOrder})
         }
-        await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/setOrders`,options)
+        await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/setOrders`,options)
         .then((response) => {
             response.json()
             if (response.ok){

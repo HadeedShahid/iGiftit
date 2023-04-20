@@ -57,7 +57,7 @@ export async function getServerSideProps() {
 
     let fetchedData = {}
     try {
-        const response = await fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options);
+        const response = await fetch(`${process.env.PROTOCOL}://${process.env.VERCEL_URL}/api/Products/getProducts`,options);
         const jsonData = await response.json();
         fetchedData = jsonData.products;
     } catch (error) {

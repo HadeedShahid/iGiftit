@@ -24,7 +24,7 @@ const Cart=(props)=>{
                 body:JSON.stringify({items:ctx.cartItems})
             }
 
-            await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
+            await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
             .then((response) => response.json())
             .then((data) => setProductData(
                 ()=>{

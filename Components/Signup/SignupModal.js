@@ -19,12 +19,12 @@ const SignupModal=(props)=>{
 
 
         // console.log("normal vercel",props.url)
-        await fetch(`https://${props.url}/api/auth/signup`,options)
+        await fetch(`${process.env.PROTOCOL}://${props.url}/api/auth/signup`,options)
         .then(res => res.json())
         .then(data => {
             console.log("***data", data);
             if (data) {
-                router.push(`http://${props.url}/LandingPage`);
+                router.push(`${process.env.PROTOCOL}://${props.url}/LandingPage`);
             }
         });
 
@@ -32,7 +32,7 @@ const SignupModal=(props)=>{
         
     }
     const signupWithGoogleHandler=async()=>{
-        signIn('google',{callbackUrl:`http://${props.url}/LandingPage`});
+        signIn('google',{callbackUrl:`${process.env.PROTOCOL}://${props.url}/LandingPage`});
     }
     return(
         <Fragment>

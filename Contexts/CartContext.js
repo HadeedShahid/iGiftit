@@ -25,7 +25,7 @@ export const CartContextProvider=(props)=>{
             body:JSON.stringify({email:email,cartitem:newArray})
         }
         console.log("the bozyyy",options.body)
-        await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/setCartItem`,options).then(res=>{res.json()}).then(data=>{
+        await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/setCartItem`,options).then(res=>{res.json()}).then(data=>{
             if (data){console.log("success")}
         })
     }
@@ -37,7 +37,7 @@ export const CartContextProvider=(props)=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email:email})
         }
-        fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/emptyCart`,options)
+        fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/emptyCart`,options)
         .then((response) => response.json())
         .then((data) => { setCartItems(data.cartItems);console.log("empty cart",data.cartItems)});
 
@@ -51,7 +51,7 @@ export const CartContextProvider=(props)=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email:email})
         }
-        fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItems`,options)
+        fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItems`,options)
         .then((response) => response.json())
         .then((data) => { setCartItems(data.cartItems);console.log("fetched data",data.cartItems)});
     }
@@ -70,7 +70,7 @@ export const CartContextProvider=(props)=>{
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({items:cartItems})
             }
-            const productNames =  await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
+            const productNames =  await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
             .then((response) => response.json())
             .then((data) =>
                 {

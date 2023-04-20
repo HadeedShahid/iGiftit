@@ -12,7 +12,7 @@ export default async function handler(req,res){
             body:JSON.stringify({email})
         }
         // console.log("userid",userId)
-        const oldAddresses = await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/getAddresses`,options).then(async res=>{return (await res.json()).message});
+        const oldAddresses = await fetch(`${process.env.PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/getAddresses`,options).then(async res=>{return (await res.json()).message});
         // console.log("old Addresses",oldAddresses)
         // console.log(addressToAdd)
 
