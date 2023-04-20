@@ -1,11 +1,11 @@
 import { createContext, useContext,useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react';
-
 const userCartContext = createContext({
   cartItems:[],
   totalAmount: ()=>{},
   addCartItem: async (item)=>{},
   removeCartItem: async (id)=>{},
+  clearCart: async()=>{}
 });
 
 export const CartContextProvider=(props)=>{
@@ -28,6 +28,18 @@ export const CartContextProvider=(props)=>{
         await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/setCartItem`,options).then(res=>{res.json()}).then(data=>{
             if (data){console.log("success")}
         })
+    }
+
+    const clearCartHandler=async()=>{
+        const options={
+            method:"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:email})
+        }
+        fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/emptyCart`,options)
+        .then((response) => response.json())
+        .then((data) => { setCartItems(data.cartItems);console.log("empty cart",data.cartItems)});
+
     }
 
     const loadCartHandler=async ()=>{
@@ -101,7 +113,8 @@ export const CartContextProvider=(props)=>{
             {cartItems:cartItems,
             addCartItem: addItemHandler,
             removeCartItem: removeItemHandler,
-            totalAmount:totalAmountHandler}
+            totalAmount:totalAmountHandler,
+            clearCart:clearCartHandler}
          }>
             {props.children}
         </userCartContext.Provider>
