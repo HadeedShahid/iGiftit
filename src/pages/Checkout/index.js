@@ -5,7 +5,6 @@ import userCartContext from "Contexts/CartContext";
 import { useSession } from "next-auth/react"
 // import OrderConfirmation from "./OrderConfirmation/OrderConfirmation";
 import { useRouter } from 'next/router'
-
 const Checkout=()=>{
 
     const ctx = useContext(userCartContext)
@@ -147,6 +146,8 @@ const Checkout=()=>{
                 console.log("in log",data)
             }
         );
+
+        ctx.clearCart()
 
     }
     console.log(ctx.cartItems)
