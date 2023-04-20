@@ -14,7 +14,7 @@ const Product=()=>{
             body:JSON.stringify({id:prodId})
         }
     
-        fetch('http://localhost:3000/api/Products/getProductById',options) .then((response) => response.json())
+        fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProductById`,options) .then((response) => response.json())
         .then((data) => {console.log(data.product);setData(data.product)})
     },[]);
     

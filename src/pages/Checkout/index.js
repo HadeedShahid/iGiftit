@@ -28,7 +28,7 @@ const Checkout=()=>{
                 body:JSON.stringify({items:ctx.cartItems})
             }
 
-            await fetch("http://localhost:3000/api/Cart/getCartItemsDetail",options)
+            await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
             .then((response) => response.json())
             .then((data) => setProductData(
                 ()=>{
@@ -129,7 +129,7 @@ const Checkout=()=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({orderToAdd:newOrder})
         }
-        await fetch("http://localhost:3000/api/Orders/setOrders",options)
+        await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/setOrders`,options)
         .then((response) => {
             response.json()
             if (response.ok){

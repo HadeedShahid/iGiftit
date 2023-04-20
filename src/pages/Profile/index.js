@@ -29,10 +29,10 @@ const ViewProfile=()=>{
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email})
         }
-        fetch('http://localhost:3000/api/Addresses/getAddresses',options).then(async res=>{
+        fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/getAddresses`,options).then(async res=>{
             setAddresses((await res.json()).message);
         });
-        fetch('http://localhost:3000/api/Orders/getOrders',options).then(async res=>{
+        fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/getOrders`,options).then(async res=>{
             const retOrders = (await res.json()).orders
             setOrders(retOrders)
             console.log("ret products",retOrders)

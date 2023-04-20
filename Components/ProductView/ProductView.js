@@ -21,7 +21,7 @@ const ProductView=(props)=>{
         console.log("in hadnelr")
         const prodId = props.data.id;
         await ctx.addCartItem({ [prodId]:e});
-        router.push('http://localhost:3000/Homepage')
+        router.push(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/Homepage`)
     }
 
     useEffect(() => {

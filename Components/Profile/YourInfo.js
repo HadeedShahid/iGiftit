@@ -17,7 +17,7 @@ const YourInfo=(props)=>{
             body:JSON.stringify({email:session.user.email,addressToAdd:data})
         }
     
-        await fetch('http://localhost:3000/api/Addresses/setAddresses',options).then((response) => response.json())
+        await fetch(`https://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/setAddresses`,options).then((response) => response.json())
         .then((data) => {console.log(data)})
     }
     return(
