@@ -31,6 +31,7 @@ export const CartContextProvider=(props)=>{
     }
 
     const clearCartHandler=async()=>{
+        const email = session.user.email;
         const options={
             method:"POST",
             headers:{'Content-Type':'application/json'},
