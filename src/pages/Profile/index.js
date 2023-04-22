@@ -9,6 +9,7 @@ const ViewProfile=()=>{
     const [InfoPressed,setInfoPressed] = useState(true);
     const [addresses,setAddresses]=useState({});
     const [orders,setOrders] = useState([]);
+    const [IsAddUpdated,setIsAddUpdated] = useState(false);
     const { data: session } = useSession();
     const InfoHandler=()=>{
         setInfoPressed(true);
@@ -20,26 +21,50 @@ const ViewProfile=()=>{
         signOut();
     };
     
-
-    const addrs = useEffect(() => {
+    const onAddAddress=(data)=>{
+        // console.log("updated add",data)
+        const len = addresses.length+1
+        const tempAdd = {...addresses,[len]:data}
+        console.log("updating adrresses array",tempAdd)
+        setAddresses(tempAdd)
+    }
+    const fetchAddresses = async (email) => {
+        const options = {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        };
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/getAddresses`, options)
+            .then(async res => {
+                setAddresses((await res.json()).message);
+            });
+    };
+    const fetchOrders = async (email) => {
+        const options = {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        };
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/getOrders`, options)
+            .then(async res => {
+                const retOrders = (await res.json()).orders;
+                setOrders(retOrders);
+                console.log("ret products", retOrders);
+            });
+    };
+    useEffect(() => {
         // console.log("in use effect")
         const email = session.user.email
-        const options={
-            method:"POST",
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({email})
-        }
-        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/getAddresses`,options).then(async res=>{
-            setAddresses((await res.json()).message);
-        });
-        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Orders/getOrders`,options).then(async res=>{
-            const retOrders = (await res.json()).orders
-            setOrders(retOrders)
-            console.log("ret products",retOrders)
-        });
-        // console.log("in ude effect")
-        // console.log("addresses",addresses)
+    
+        fetchAddresses(email);
+        fetchOrders(email);
+
       },[]);
+    useEffect(() => {
+        const email = session.user.email
+        IsAddUpdated ? (fetchAddresses(email),setIsAddUpdated(false)):undefined
+    },[IsAddUpdated]);
+
     return(
         <Fragment>
             <Header></Header>
@@ -49,7 +74,7 @@ const ViewProfile=()=>{
                 <button onClick={InfoHandler} className={`${InfoPressed ? styles.Focused : styles.NotFocused}`}>Your Information</button>
                 <button onClick={OrderHandler} className={`${!InfoPressed ? styles.Focused : styles.NotFocused}`}>Your Orders</button>
             </div>
-            {InfoPressed ? <Profile logoutBtn={logoutClickedHandler} Addresses={addresses}></Profile>:<Orders orders={orders}></Orders>}
+            {InfoPressed ? <Profile onAddAddress={()=>{setIsAddUpdated(true);}} logoutBtn={logoutClickedHandler} Addresses={addresses}></Profile>:<Orders orders={orders}></Orders>}
 
         </Fragment>
     );
