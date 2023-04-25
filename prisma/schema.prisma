@@ -43,3 +43,9 @@ model Products{
    images Json
    size Json?
 }
+model Reminders{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userEmail String @unique
+  date String
+  message String
+}

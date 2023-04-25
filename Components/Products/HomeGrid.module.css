@@ -29,3 +29,54 @@
     align-self: flex-end;
     height: 100%;
 }
+
+.btnFont{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #212121;
+    padding: 6px 8px;
+    border: none;
+    background-color: #FFFFFF;
+}
+.btn{
+    width: 32px;
+    height: 32px;
+    background: #EEEEEE;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    border: none;
+}
+.leftBtnImg{
+    height: 7px;
+    width: 7px;
+    transform:rotateY(180deg);
+}
+.rightBtnImg{
+    height: 7px;
+    width: 7px;
+}
+.btnWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+}
+.active{
+    background: #FAFAFA;
+    border: 1px solid #212121;
+    border-radius: 4px;
+    padding: 7px 7px;
+    gap: 8px;
+    
+}
+.leftBtn{
+    margin-right: 8px;
+}
+.rightBtn{
+    margin-left: 8px;
+}

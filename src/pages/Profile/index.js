@@ -7,7 +7,7 @@ import { getSession, useSession, signOut } from "next-auth/react";
 import { useEffect } from "react";
 const ViewProfile=()=>{
     const [InfoPressed,setInfoPressed] = useState(true);
-    const [addresses,setAddresses]=useState({});
+    const [addresses,setAddresses]=useState([]);
     const [orders,setOrders] = useState([]);
     const [IsAddUpdated,setIsAddUpdated] = useState(false);
     const { data: session } = useSession();
@@ -52,6 +52,20 @@ const ViewProfile=()=>{
                 console.log("ret products", retOrders);
             });
     };
+    const onRemoveHandler=(idx)=>{
+        const email = session.user.email
+        const newAddresses = [...addresses]; // Make a copy of the addresses array
+        newAddresses.splice(idx, 1); // Remove the nth element from the copy
+        // setAddresses(newAddresses); 
+        const options={
+            method:"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:session.user.email,addressToAdd:newAddresses})
+        }
+        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/setWholeAddress`,options).then((response) => response.json())
+        .then((data) => {console.log(data);setAddresses(newAddresses);})
+        
+    }
     useEffect(() => {
         // console.log("in use effect")
         const email = session.user.email
@@ -74,14 +88,14 @@ const ViewProfile=()=>{
                 <button onClick={InfoHandler} className={`${InfoPressed ? styles.Focused : styles.NotFocused}`}>Your Information</button>
                 <button onClick={OrderHandler} className={`${!InfoPressed ? styles.Focused : styles.NotFocused}`}>Your Orders</button>
             </div>
-            {InfoPressed ? <Profile onAddAddress={()=>{setIsAddUpdated(true);}} logoutBtn={logoutClickedHandler} Addresses={addresses}></Profile>:<Orders orders={orders}></Orders>}
+            {InfoPressed ? <Profile onRemove={onRemoveHandler} onAddAddress={()=>{setIsAddUpdated(true);}} logoutBtn={logoutClickedHandler} Addresses={addresses}></Profile>:<Orders orders={orders}></Orders>}
 
         </Fragment>
     );
 };
 export async function getServerSideProps({req}){
     const session = await getSession({req})
-    console.log("Session",req)
+    // console.log("Session",req)
     if (!session){
         return{redirect:{
             destination:'/LandingPage',

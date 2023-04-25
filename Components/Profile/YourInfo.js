@@ -55,7 +55,7 @@ const YourInfo=(props)=>{
                             <span className={styles.add}>Add</span><span className={styles.plus}>+</span>
                         </Button>
                     </div>
-                    <SavedAddresses Addresses={props.Addresses}></SavedAddresses>
+                    <SavedAddresses onRemove={props.onRemove} Addresses={props.Addresses}></SavedAddresses>
                 </div>
                 <div className={styles.addrCardWrap}>
                     <div className={styles.addressWrap}>

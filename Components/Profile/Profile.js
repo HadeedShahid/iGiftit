@@ -4,7 +4,7 @@ import YourInfo from './YourInfo';
 const Profile=(props)=>{
     return(
         <div className={styles.container}>
-            <YourInfo onAddAddress={props.onAddAddress} logoutBtn={props.logoutBtn} Addresses = {props.Addresses}></YourInfo>
+            <YourInfo onRemove={props.onRemove} onAddAddress={props.onAddAddress} logoutBtn={props.logoutBtn} Addresses = {props.Addresses}></YourInfo>
         </div>
     );
 };

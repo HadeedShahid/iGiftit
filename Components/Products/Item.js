@@ -51,7 +51,7 @@ const Item=(props)=>{
                         <span className={styles.customDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.</span>
                 </div>
                 <div className={styles.customWrap}>
-                    <span className={styles.customPrice}>{price}</span>
+                    <span className={styles.customPrice}>Rs. {price}</span>
                     <Link href={'/Products/' + id}>
                         <Button class={styles.btnClass}>
                             <span>Gift Item</span>

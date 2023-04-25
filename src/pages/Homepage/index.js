@@ -6,37 +6,25 @@ import SearchBar from 'Components/UI/SearchBar';
 // import prisma from 'lib/prisma';
 const Homepage=(props)=>{
     const data = props.products
-    // const data = {
-    //     id: '6430yuio34b13078h31',
-    //     name:'Teddy Bear',
-    //     desc:'A home to aviation',
-    //     seller:'Al-Fatah',
-    //     price:'Rs. 2000',
-    //     image:'/static/images/icons/Teddy.png'
-    // }
+   
+
+
     const questions={
         question:'What is the person’s age you are buying the gift for ?',
         options:['< 16 Years','< 16-24 Years','< 25-40 Years','> 40 Years']
     };
-    useEffect(() => {
-        // const options={
-        //     method:"POST",
-        //     headers:{'Content-Type':'application/json'},
-        //     body:JSON.stringify({})
-        // }
-        // console.log("url",process.env.VERCEL_URL)
-        // // fetch('http://localhost:3000/api/Products/getProducts',options) .then((response) => response.json())
-        // // .then((data) => {console.log(data.products);setData(data.products)})
-        // fetch(`http://${process.env.VERCEL_URL}/api/Products/getProducts`,options) .then((response) => response.json())
-        // .then((data) => {console.log(data.products);setData(data.products)})
-    }, []);
+    
+    
+    const temp = Array(50).fill(data.slice(2)).reduce((acc, val) => acc.concat(val), []) 
+    const tempdata = temp.map((t, i) => ({...t, name: String(i + 1)}));
+    console.log("tempdata",tempdata)
     return(
         <Fragment>
             {/* <h1>{data?"tr":"fa"}</h1> */}
             <Header></Header>
             <SearchBar></SearchBar>
             <Recommendation data={data?[data[0],data[1]]:{}} questions={questions}></Recommendation>
-            <HomeGrid data={data?data:{}}></HomeGrid>
+            <HomeGrid data={data?tempdata:{}}></HomeGrid>            
         </Fragment>
     );
 };
