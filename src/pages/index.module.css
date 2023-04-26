@@ -1,0 +1,123 @@
+.Body{
+    background-color:#BCBCBC;
+}
+.Header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#FFF;
+}
+.Logo{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #242424;
+}
+.Logo span{
+    color: #CD1315;
+}
+.Links{
+    border: 2px solid red;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 470px;
+    min-width: 400px;
+
+    
+}
+.Links li{
+    list-style: none;
+}
+.Links li a{
+    text-decoration: none;
+    color: #757575;
+    /* margin-right: 10px; */
+}
+.BtnContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.BtnDesign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+}
+.BtnFont{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #212121;
+}
+.LoginBtn{
+    background-color: #fff;
+}
+.SignupBtn{
+    background: #212121;
+    color: white;
+}
+.Hero{
+    border: 2px solid red;
+}
+.Hero .Title{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    color: #242424;
+}
+.Hero .Title span{
+    text-decoration-line: underline;
+}
+.dot{
+    text-decoration-line: none !important;
+    color: #CD1315;
+}
+.Hero .Left{
+max-width: 650px;
+border: 2px solid black;
+}
+.Hero .desc{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #787878;
+}
+.GetStarted{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+    width: 287px;
+    /* max-width: ; */
+    height: 56px;
+
+    background: #212121;
+    border-radius: 4px;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+
+}
