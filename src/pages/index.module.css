@@ -73,13 +73,23 @@
 }
 .Hero{
     border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* max-width: 1650px; */
+    /* margin: auto; */
+    /* padding-top: 250px; */
+    height: 100vh;
 }
 .Hero .Title{
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
+    line-height: 150%;
     color: #242424;
+    margin-bottom: 12px;
 }
 .Hero .Title span{
     text-decoration-line: underline;
@@ -89,7 +99,7 @@
     color: #CD1315;
 }
 .Hero .Left{
-max-width: 650px;
+max-width: 600px;
 border: 2px solid black;
 }
 .Hero .desc{
@@ -97,18 +107,21 @@ border: 2px solid black;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
+    line-height: 200%;
     color: #787878;
+    margin-bottom: 30px;
 }
-.GetStarted{
+.Hero .GetStarted{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 16px;
 
-    width: 287px;
+    width: 50%;
+    max-width: 250px;
     /* max-width: ; */
-    height: 56px;
+    height: 50px;
 
     background: #212121;
     border-radius: 4px;
@@ -118,6 +131,62 @@ border: 2px solid black;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
+    line-height: 20px;
     color: #FFFFFF;
-
+}
+.Hero .GetStarted .text{
+    margin-right: 10px;
+}
+.Hero .GetStarted img{
+    width: 18px;
+    height: 16px;
+}
+.Hero .Right{
+    border: 3px solid green;
+    position: relative;
+}
+.Hero .Right img{
+    width: 300px;
+}
+.Hero .buff1{
+    border: 2px solid blue;
+    flex: 1 1.5 20em
+}
+.Hero .buff{
+    border: 2px solid blue;
+    flex: 2 2 20em
+}
+.Hero .rightImg{
+    position: absolute;
+    width: 150px !important;
+    height: auto;
+    /* border: 2px solid red; */
+    top: 0;
+    right: 0;
+    transform: translate(87%,-35%);
+}
+.Hero .leftImg{
+    position: absolute;
+    width: 130px !important;
+    height: auto;
+    left: 0;
+    top: 100%;
+    transform: translate(-85%,-80%);
+}
+.Hero .you{
+    position: absolute;
+    width: 210px !important;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    transform: translate(-28%,65%);
+}
+.cont{
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1650px;
+    margin: auto;
 }
