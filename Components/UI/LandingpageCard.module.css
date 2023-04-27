@@ -1,0 +1,33 @@
+.card{
+    /* border: 2px solid red; */
+    height: 240px;
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    position: absolute;
+
+}
+.top{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.link{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.link a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

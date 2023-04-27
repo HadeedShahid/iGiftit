@@ -1,5 +1,4 @@
 .Body{
-    background-color:#BCBCBC;
 }
 .Header{
     display: flex;
@@ -80,7 +79,13 @@
     /* max-width: 1650px; */
     /* margin: auto; */
     /* padding-top: 250px; */
-    height: 100vh;
+    min-height: 1000px;
+    height: 80vh;
+    max-height: 1200px;
+    padding-top: 50px;
+    margin-top: 50px;
+    background-color:#fcfcfc;
+
 }
 .Hero .Title{
     font-family: 'Plus Jakarta Sans';
@@ -163,7 +168,6 @@ border: 2px solid black;
     /* border: 2px solid red; */
     top: 0;
     right: 0;
-    transform: translate(87%,-35%);
 }
 .Hero .leftImg{
     position: absolute;
@@ -171,7 +175,6 @@ border: 2px solid black;
     height: auto;
     left: 0;
     top: 100%;
-    transform: translate(-85%,-80%);
 }
 .Hero .you{
     position: absolute;
@@ -179,7 +182,6 @@ border: 2px solid black;
     height: auto;
     left: 0;
     bottom: 0;
-    transform: translate(-28%,65%);
 }
 .cont{
     border: 2px solid red;
@@ -189,4 +191,257 @@ border: 2px solid black;
     width: 100%;
     max-width: 1650px;
     margin: auto;
+    height: 100%;
+}
+.Delivered{
+    min-height: 1000px;
+    height: 80vh;
+    max-height: 1200px;
+
+    margin-top: 100px;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+.DelLeft{
+    border: 2px solid blue;
+    max-width: 620px;
+}
+.DelRight{
+    border: 2px solid cyan;
+    position: relative;
+    flex-basis: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.DelTitle{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: #242424;
+}
+.DelDesc{ 
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 200%;
+    color: #787878;
+}
+ .party{
+    left: 0;
+    bottom: 0;
+    transform: translate(25%,-25%);
+}
+.heart{
+    left: 0;
+    bottom: 0;
+    transform: translate(125%,-125%);
+}
+.wedding{
+    left: 0;
+    bottom: 0;
+    transform: translate(225%,-225%);
+}
+.Party{
+    left: 0;
+    bottom: 0;
+    transform: translate(325%,-125%);
+}
+.Cake{
+    left: 0;
+    bottom: 0;
+    transform: translate(325%,-25%);
+}
+
+.Work{
+    min-height: 1000px;
+    /* height: 80vh;
+    max-height: 1200px; */
+
+    margin-top: 100px;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.WorkCont{
+    border: 2px solid red;
+    width: 100%;
+    max-width: 1650px;
+    margin: auto;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 100px;
+}
+.PerfGiftText{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.WrapitText{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: #FCFCFC;
+    border-radius: 100px;
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #242424;
+}
+.WorkTitle{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #242424;
+}
+.WorkDesc{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 200%;
+    color: #787878;
+}
+.TextWrap{
+    max-width: 380px;
+
+}
+.PerfGiftImg{
+    width: 100%;
+    height: 100%;
+}
+.PerfGiftImg img{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+.underline{
+    text-decoration-line: underline;
+}
+.DelCardColorWhite{
+    background-color: #FFFFFF;
+}
+.DelCardColorBlack{
+    background-color: #242424;
+}
+.DelCardColorGrey{
+    background-color: #FCFCFC;
+}
+.DelCardFontBlack{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+
+    /* Coal */
+
+    color: #242424;
+}
+.DelCardFontWhite{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+
+    /* Coal */
+
+    color: #FFFFFF;
+}
+.fadein {
+    opacity: 0;
+    animation: fade-in-animation 1s ease forwards;
+}
+.slideinright {
+    opacity: 0;
+    /* transform: translateX(-100%); */
+    animation: slide-in-animation-right 2s ease forwards;
+}
+.slideinleft {
+    opacity: 0;
+    /* transform: translateX(-100%); */
+    animation: 2s slide-in-animation-left 0.5s ease forwards;
+}
+.slideinyou {
+    opacity: 0;
+    /* transform: translateX(-100%); */
+    animation: 3s slide-in-animation-you 0.5s ease forwards;
+}
+@keyframes slide-in-animation-you {
+    0% {
+        opacity: 0;
+        transform: translatey(200%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-28%,65%);
+    }
+}
+@keyframes slide-in-animation-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-85%,-80%);
+
+    }
+}
+@keyframes slide-in-animation-right {
+    0% {
+        opacity: 0;
+        transform: translateX(200%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(87%,-35%);
+    }
+}
+@keyframes fade-in-animation {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
 }

@@ -42,6 +42,9 @@ model Products{
    colors Json?
    images Json
    size Json?
+   category Int
+   tag String 
+   uid String @unique
 }
 model Reminders{
   id String @id @default(auto()) @map("_id") @db.ObjectId

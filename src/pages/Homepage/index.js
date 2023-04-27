@@ -15,16 +15,16 @@ const Homepage=(props)=>{
     };
     
     
-    const temp = Array(50).fill(data.slice(2)).reduce((acc, val) => acc.concat(val), []) 
-    const tempdata = temp.map((t, i) => ({...t, name: String(i + 1)}));
-    console.log("tempdata",tempdata)
+    // const temp = Array(50).fill(data.slice(2)).reduce((acc, val) => acc.concat(val), []) 
+    // const tempdata = temp.map((t, i) => ({...t, name: String(i + 1)}));
+    // console.log("tempdata",tempdata)
     return(
         <Fragment>
             {/* <h1>{data?"tr":"fa"}</h1> */}
             <Header></Header>
             <SearchBar></SearchBar>
             <Recommendation data={data?[data[0],data[1]]:{}} questions={questions}></Recommendation>
-            <HomeGrid data={data?tempdata:{}}></HomeGrid>            
+            <HomeGrid data={data?data.slice(2):{}}></HomeGrid>            
         </Fragment>
     );
 };

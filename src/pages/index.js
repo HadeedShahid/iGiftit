@@ -1,3 +1,4 @@
+import LandingpageCard from 'Components/UI/LandingpageCard';
 import styles from './index.module.css'
 const LandingPage=()=>{
   return(
@@ -27,15 +28,59 @@ const LandingPage=()=>{
           <div className={styles.buff}></div>
           <div className={styles.Right}>
             <img src='/static/images/icons/Hero_Image.png'></img>
-            <img className={styles.rightImg} src='/static/images/icons/fav_per.png'></img>
-            <img className={styles.leftImg} src='/static/images/icons/car_chosen.png'></img>
-            <img className={styles.you} src='/static/images/icons/you.svg'></img>
+            <img className={`${styles.rightImg} ${styles.slideinright}`} src='/static/images/icons/fav_per.png'></img>
+            <img className={`${styles.leftImg} ${styles.slideinleft}`} src='/static/images/icons/car_chosen.png'></img>
+            <img className={`${styles.you} ${styles.slideinyou}`} src='/static/images/icons/you.svg'></img>
             {/* <img className={styles.line} src='/static/images/icons/line.svg'></img> */}
 
           </div>
           <div className={styles.buff1}></div>
         </div>
         
+      </div>
+      <div className={styles.Delivered}> 
+        <div className={styles.cont}>
+          <div className={styles.DelLeft}>
+              <div className={styles.DelTitle}>Love Delivered<span className={styles.dot}>,</span> Happiness Created</div>
+              <div className={styles.DelDesc}>We provide gifts for every occasion. Whether its a birthday party, anniversary or a special occasion. We have got the perfect gifts ready to be delivered to your loved ones.</div>
+
+            </div>
+            <div className={styles.DelRight}>
+              <LandingpageCard classes={`${styles.party} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="Party.svg" title="Party Event Gift"></LandingpageCard>
+              <LandingpageCard classes={`${styles.heart} ${styles.DelCardColorBlack} ${styles.DelCardFontWhite}`} image="heart.svg" title="Party Event Gift"></LandingpageCard>
+              <LandingpageCard classes={`${styles.wedding} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="wedding.svg" title="Party Event Gift"></LandingpageCard>
+              <LandingpageCard classes={`${styles.Party} ${styles.DelCardColorWhite} ${styles.DelCardFontBlack}`} image="Bear.svg" title="Party Event Gift"></LandingpageCard>
+              <LandingpageCard classes={`${styles.Cake} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="Cake.svg" title="Party Event Gift"></LandingpageCard>
+            </div>
+        </div>
+      </div>
+
+      <div className={styles.Work}>
+        <div>How we work</div>
+        <div className={styles.WorkCont}>
+          <div className={styles.PerfGiftText}>
+            <div className={styles.TextWrap}>
+              <div className={styles.circle}>1</div>
+              <div className={styles.WorkTitle}>Choose the <span className={styles.underline}>Perfect Gift</span> for your Loved ones</div>
+              <div className={styles.WorkDesc}>We, you and our highly intelligent AI algorithm work together to find a gift that will be be loved by the person you are trying to surprise.</div>
+            </div>
+          </div>
+          <div className={styles.PerfGiftImg}>
+            <img src='/static/images/landingpage/workimg1.svg'></img>
+          </div>
+
+          <div className={styles.PerfGiftImg}>
+            <img src='/static/images/landingpage/workingimg2.svg'></img>
+          </div>
+          <div className={styles.WrapitText}>
+            <div className={styles.TextWrap}>
+              <div className={styles.circle}>2</div>
+              <div className={styles.WorkTitle}><span>Wrap it</span> and Add a Lovely Greeting</div>
+              <div className={styles.WorkDesc}>We help you to wrap it according to your like and add custom greeting cards to make the experience much better.</div>
+            </div>
+          </div>
+          
+        </div>
       </div>
     </div>
   );
