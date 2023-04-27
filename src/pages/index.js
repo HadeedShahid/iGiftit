@@ -56,7 +56,7 @@ const LandingPage=()=>{
       </div>
 
       <div className={styles.Work}>
-        <div>How we work</div>
+        <div className={styles.workStatement}>How we work</div>
         <div className={styles.WorkCont}>
           <div className={styles.PerfGiftText}>
             <div className={styles.TextWrap}>
@@ -75,12 +75,31 @@ const LandingPage=()=>{
           <div className={styles.WrapitText}>
             <div className={styles.TextWrap}>
               <div className={styles.circle}>2</div>
-              <div className={styles.WorkTitle}><span>Wrap it</span> and Add a Lovely Greeting</div>
+              <div className={styles.WorkTitle}><span className={styles.underline}>Wrap it</span> and Add a Lovely Greeting</div>
               <div className={styles.WorkDesc}>We help you to wrap it according to your like and add custom greeting cards to make the experience much better.</div>
             </div>
           </div>
-          
         </div>
+
+        <div className={styles.bottomWrap}>
+          <div className={styles.WrapitText}>
+              <div className={styles.Text__Wrap}>
+                <div className={styles.circle}>3</div>
+                <div className={styles.Work__Title}>Get it <span className={styles.underline}>Delivered</span> to your Loved ones</div>
+                <div className={styles.Work__Desc}>We deliver your gift for you on the day you choose !</div>
+              </div>
+          </div>
+          <div>
+            <img src='/static/images/landingpage/workimg3.svg'></img>
+          </div>
+          <button className={styles.WorkButton}>Get Started</button>
+        </div>
+        
+      </div>
+
+      <div className={styles.footer}>
+        <div className={styles.Logo}>iGift it<span className={styles.dot}>.</span></div>
+        <div className={styles.footer_desc}>Copyright. All rights reserved</div>
       </div>
     </div>
   );
