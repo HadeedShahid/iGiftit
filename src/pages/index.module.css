@@ -1,3 +1,6 @@
+.Body{
+    margin: auto;
+}
 .Header{
     display: flex;
     align-items: center;
