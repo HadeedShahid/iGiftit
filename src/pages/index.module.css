@@ -1,5 +1,3 @@
-.Body{
-}
 .Header{
     display: flex;
     align-items: center;
@@ -736,12 +734,15 @@ max-width: 600px;
     }
     .Hero{
         /* border: 2px solid black; */
-        min-height: 900px;
+        min-height: 800px;
+        height: 80vh;
+        max-height: 1000px;
         /* height: 100vh; */
     }
     .cont{
         /* border: 2px solid red; */
         width: 90%;
+        /* height: 100% !important; */
     }
     .Hero .Title{
         font-size: 36px;
@@ -763,7 +764,7 @@ max-width: 600px;
         width: 120px !important;
     }
     .Hero .GetStarted{
-        margin-bottom: 0;
+        margin-bottom: 50px;
     }
     .DelTitle,.workStatement{
         font-size: 36px;
@@ -777,5 +778,7 @@ max-width: 600px;
     .DelCardFontWhite{
         font-size: 12px;
     }
-    
+    .Header{
+        margin-top: 0;
+    }
 }
