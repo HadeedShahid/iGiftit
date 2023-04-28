@@ -16,9 +16,9 @@ const Authenticate=(props)=>{
     return(
         <Fragment>
             <div>{console.log(session)}</div>
-            <div>{session ? <h1>{session.user.email}</h1> : <h1>Not logged in</h1>}</div>
-            <button onClick={()=>{setLoginPressed(true)}}>Login</button>
-            <button onClick={()=>{setSignUpPressed(true)}}>Signup</button>
+            {/* <div>{session ? <h1>{session.user.email}</h1> : <h1>Not logged in</h1>}</div> */}
+            <button className={props.loginStyle} onClick={()=>{setLoginPressed(true)}}>Login</button>
+            <button className={props.signupStyle} onClick={()=>{setSignUpPressed(true)}}>Signup</button>
             {signUpPressed && <SignupModal onClose={ModalHandler} > </SignupModal>}
             {LoginPressed && <LoginModal onClose={ModalHandler} > </LoginModal>}
         </Fragment>

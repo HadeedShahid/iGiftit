@@ -1,5 +1,6 @@
 import LandingpageCard from 'Components/UI/LandingpageCard';
 import styles from './index.module.css'
+import Authenticate from 'Components/Authenticate/Authenticate';
 const LandingPage=()=>{
   return(
     <div className={styles.Body}>
@@ -11,8 +12,9 @@ const LandingPage=()=>{
           <li><a href='#'>Something Special</a></li>
         </ul>
         <div className={styles.BtnContainer}>
-          <button className={`${styles.BtnDesign} ${styles.BtnFont} ${styles.LoginBtn}`}>Login</button>
-          <button className={`${styles.BtnDesign} ${styles.BtnFont} ${styles.SignupBtn}`}>Signup</button>
+          {<Authenticate loginStyle={`${styles.BtnDesign} ${styles.BtnFont} ${styles.LoginBtn}`} signupStyle={`${styles.BtnDesign} ${styles.BtnFont} ${styles.SignupBtn}`}></Authenticate>}
+          {/* <button className={}>Login</button> */}
+          {/* <button className={}>Signup</button> */}
         </div>
       </div>
       <div className={styles.Hero}>
@@ -39,7 +41,7 @@ const LandingPage=()=>{
         
       </div>
       <div className={styles.Delivered}> 
-        <div className={styles.cont}>
+        <div className={styles.Delcont}>
           <div className={styles.DelLeft}>
               <div className={styles.DelTitle}>Love Delivered<span className={styles.dot}>,</span> Happiness Created</div>
               <div className={styles.DelDesc}>We provide gifts for every occasion. Whether its a birthday party, anniversary or a special occasion. We have got the perfect gifts ready to be delivered to your loved ones.</div>
@@ -90,7 +92,7 @@ const LandingPage=()=>{
               </div>
           </div>
           <div>
-            <img src='/static/images/landingpage/workimg3.svg'></img>
+            <img className={styles.three} src='/static/images/landingpage/workimg3.svg'></img>
           </div>
           <button className={styles.WorkButton}>Get Started</button>
         </div>

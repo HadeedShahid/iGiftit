@@ -232,6 +232,16 @@ max-width: 600px;
     margin: auto;
     height: 100%;
 }
+.Delcont{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1650px;
+    margin: auto;
+    height: 100%;
+}
 .Delivered{
     min-height: 1000px;
     height: 80vh;
@@ -277,30 +287,30 @@ max-width: 600px;
     line-height: 200%;
     color: #787878;
 }
- .party{
+.party{
     left: 0;
     bottom: 0;
-    transform: translate(25%,-25%);
+    transform: translate(25%,-100%);
 }
 .heart{
     left: 0;
     bottom: 0;
-    transform: translate(125%,-125%);
+    transform: translate(125%,-200%);
 }
 .wedding{
     left: 0;
     bottom: 0;
-    transform: translate(225%,-225%);
+    transform: translate(225%,-300%);
 }
 .Party{
     left: 0;
     bottom: 0;
-    transform: translate(325%,-125%);
+    transform: translate(325%,-200%);
 }
 .Cake{
     left: 0;
     bottom: 0;
-    transform: translate(325%,-25%);
+    transform: translate(325%,-100%);
 }
 
 .Work{
@@ -309,7 +319,7 @@ max-width: 600px;
     /* height: 80vh;
     max-height: 1200px; */
 
-    margin-top: 200px;
+    margin-top: 150px;
     /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
@@ -524,4 +534,248 @@ max-width: 600px;
     opacity: 0;
     /* transform: translateX(-100%); */
     animation: 3s slide-in-animation-you 0.5s ease forwards;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .Delcont{
+      flex-direction: column;
+      /* border: 2px solid red; */
+    }
+    .DelLeft{
+        /* border: 2px solid blue; */
+        max-width: 620px;
+        text-align: center;
+    }
+    .DelRight{
+        margin-top: 30px;
+        /* border: 2px solid cyan; */
+        
+        flex-basis: 100%;
+       
+    
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+
+        width: 70%;
+
+        gap: 50px;
+        /* wid */
+        
+    }
+    .DelCardFontBlack{
+        font-size: 26px;
+    }
+    .DelCardFontWhite{
+        font-size: 26px;
+    }
+    .party{
+        transform: none;
+        display: none;
+    }
+    .heart{
+        transform: none;
+    }
+    .wedding{
+        transform: none;
+    }
+    .Party{
+        transform: none;
+    }
+    .Cake{
+        transform: none;
+    }
+    .Hero .Right img{
+        width: 330px;
+    }
+    .Hero .rightImg{
+        position: absolute;
+        width: 140px !important;
+        height: auto;
+        /* border: 2px solid red; */
+        top: 0;
+        right: 0;
+    }
+    .Hero .leftImg{
+        position: absolute;
+        width: 120px !important;
+        height: auto;
+        left: 0;
+        top: 100%;
+    }
+    .Hero .you{
+        position: absolute;
+        width: 220px !important;
+        height: auto;
+        left: 0;
+        bottom: 0;
+    }
+    .Hero .Title{
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 55px;
+        line-height: 150%;
+        color: #242424;
+        margin-bottom: 12px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .cont{
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1650px;
+        margin: auto;
+        height: 100%;
+    }
+    .Hero{
+        /* border: 2px solid red; */
+        padding-top: 100px;
+        justify-content:center;
+        /* min-height: 800px; */
+    }
+    .Hero .Title{
+        text-align: center;
+    }
+    .Hero .GetStarted{
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    .Hero .desc{
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 200%;
+        color: #787878;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+}
+@media (max-width: 769px){
+    .Hero{
+        margin-top: 20px;
+    }
+    .Hero .Title{
+        margin-bottom: 0;
+    }
+    .Hero .desc{
+        margin-bottom: 10px;
+    }
+    .Hero .GetStarted{
+        margin: auto;
+        margin-bottom: 100px;
+    }
+    .Logo{
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        color: #242424;
+    }
+    .Links{
+        font-size: 12px;
+        width: 50%;
+        min-width: 293px;
+        /* max-width:; */
+        /* border: 2px solid red; */
+        justify-content: space-between;
+    }
+    .BtnDesign{
+        width: 60px;
+    }
+    .BtnFont{
+        font-size: 12px;
+    }
+    .circle{
+        width: 50px;
+        height: 50px;
+    }
+    .WorkCont{
+        column-gap: 20px;
+        row-gap: 50px;
+        margin-bottom: 50px;
+    }
+    .WorkTitle, .Work__Title{
+        font-size: 16px;
+    }
+    .WorkDesc, .Work__Desc{
+        font-size: 12px;
+    }
+    .three{
+        max-width: 360px;
+    }
+    .footer{
+        margin-top: 100px;
+        height: 200px;
+    }
+
+    .Hero .Right img{
+        width: 300px;
+    }
+    .Hero .rightImg{
+        width: 120px !important;
+    }
+    .Hero .leftImg{
+        width: 100px !important;
+    }
+    .Hero .you{
+        width: 200px !important;
+    }
+}
+@media screen and (max-width: 576px) {
+    .Links{
+        /* border: 2px solid red; */
+        display: none;
+    }
+    .Hero{
+        /* border: 2px solid black; */
+        min-height: 900px;
+        /* height: 100vh; */
+    }
+    .cont{
+        /* border: 2px solid red; */
+        width: 90%;
+    }
+    .Hero .Title{
+        font-size: 36px;
+    }
+    .Hero .desc{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .Hero .Right img{
+        width: 200px;
+    }
+    .Hero .rightImg{
+        width: 70px !important;
+    }
+    .Hero .leftImg{
+        width: 70px !important;
+    }
+    .Hero .you{
+        width: 120px !important;
+    }
+    .Hero .GetStarted{
+        margin-bottom: 0;
+    }
+    .DelTitle,.workStatement{
+        font-size: 36px;
+    }
+    .DelDesc{
+        font-size: 14px;
+    }
+    .DelCardFontBlack{
+        font-size: 12px;
+    }
+    .DelCardFontWhite{
+        font-size: 12px;
+    }
+    
 }

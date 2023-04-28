@@ -1,7 +1,8 @@
 .card{
     /* border: 2px solid red; */
     height: 240px;
-    width: 225px;
+    /* width: 225px; */
+    flex-basis: 225px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,4 +31,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 1700px) {
+  .card{
+    /* border: 2px solid red; */
+    height: 200px;
+    width: 185px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .card{
+    position:static;
+    margin: auto;
+    height: 100%;
+    /* flex-basis: 100%; */
+    width: 100%;
+  }
+  .card img{
+   width: 40px;
+   height: 40px;
+   margin-bottom: 15px;
+
+}
+}
+@media screen and (max-width: 576px) {
+  .card{
+    height: 80%;
+  }
 }
