@@ -195,21 +195,25 @@
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(12px, 1.5vw, 24px);
     color: #000000;
+    max-width: 210px;
+    /* border: 2px solid red; */
+    margin-right: 10px;
 }
 .customSeller{
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: clamp(10px, 1vw, 16px);
     color: #242424;
+
 }
 .customDesc{
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: clamp(10px, 1vw, 16px);
     color: #AAAAAA;
     width: 80%;
     max-height: 160px;
@@ -221,10 +225,24 @@
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(12px, 1.5vw, 24px);
     color: #000000;
 
 }
 .card a{
     text-decoration: none;
 }
+/* @media screen and (max-width: 1600px) {
+    .customName{
+        font-size: 20px;
+    }
+    .customPrice{
+        font-size: 20px;
+    }
+    .customDesc{
+        font-size: 12px;
+    }
+    .customSeller{
+        font-size: 12px;
+    }
+} */

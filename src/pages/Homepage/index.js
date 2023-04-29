@@ -11,7 +11,8 @@ const Homepage=(props)=>{
 
     const questions={
         question:'What is the person’s age you are buying the gift for ?',
-        options:['< 16 Years','< 16-24 Years','< 25-40 Years','> 40 Years']
+        options:['< 16 Years','< 16-24 Years','< 25-40 Years','> 40 Years',
+    '< 16 Years','< 16-24 Years','< 25-40 Years','> 40 Years']
     };
     
     
@@ -24,7 +25,7 @@ const Homepage=(props)=>{
             <Header></Header>
             <SearchBar></SearchBar>
             <Recommendation data={data?[data[0],data[1]]:{}} questions={questions}></Recommendation>
-            <HomeGrid data={data?data.slice(2):{}}></HomeGrid>            
+            <HomeGrid questions={questions} data={data?data.slice(2):{}}></HomeGrid>            
         </Fragment>
     );
 };

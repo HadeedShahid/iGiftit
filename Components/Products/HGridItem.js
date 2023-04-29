@@ -14,6 +14,7 @@ const HGridItem=(props)=>{
     const desc = props.data.description;
     const price = props.data.price;
 
+    console.log(props.data)
     const normal = 
         <Card classes={`${styles.card} ${props.classes}`}>
             <div className={styles.ImgCont}>
@@ -25,7 +26,7 @@ const HGridItem=(props)=>{
                     <div className={styles.desc}>{desc+desc+desc}</div>
                     <div className={styles.price}><span className={styles.spn}>Rs. {price}</span></div>
                     <div className={styles.button}>
-                        <Link href={'/Products/' + id}>
+                        <Link style={{ textDecoration: 'none' }} href={'/Products/' + id}>
                             <Button class={`${styles.btnClass}`}>
                                 <span>Gift Item</span>
                                 <img src='/static/images/icons/trailingIcon.png'></img>

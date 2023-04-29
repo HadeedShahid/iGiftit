@@ -64,3 +64,15 @@
     width: 100%;
     border: none;
 }
+@media screen and (max-width: 1200px) {
+    .title{
+        font-size: 12px;
+    }
+    .FormWrap label{
+        font-size: 10px;
+    }
+    .InpWrap{
+        margin-right: 2px;
+    }
+
+}

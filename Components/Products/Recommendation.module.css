@@ -40,16 +40,17 @@
 }
 .secondRecommend{
     grid-column-start: 10;
-    grid-column-end: 16;
+    grid-column-end: 17;
 }
 .question{
-    grid-column-start: 16;
+    grid-column-start: 17;
     grid-column-end: 21;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* border: 2px solid red; */
 }
 .propClass{
     width: 100%;
@@ -71,4 +72,17 @@
 }
 .smallCard{
     padding: 0px 32px;
+}
+
+@media screen and (max-width: 1200px) {
+    /* .question{
+        justify-content: flex-start;
+    } */
+    .largeCard{
+        padding:5px;
+    
+    }
+    .smallCard{
+        padding: 5px;
+    }
 }

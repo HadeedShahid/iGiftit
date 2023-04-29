@@ -3,6 +3,7 @@ import styles from './HomeGrid.module.css';
 import Item from './Item';
 import HGridItem from './HGridItem';
 import { Fragment, useState, useEffect, useRef } from 'react';
+import Questions from 'Components/Questions/Questions';
 // import Banner from '../UI/Banner';
 const HomeGrid=(props)=>{
     const data = props.data;
@@ -66,7 +67,7 @@ const HomeGrid=(props)=>{
                 <Item data={props.data[3]} type={'gridItem'} classes={styles.card}></Item> */}
                 <HGridItem data={productsToDisplay[4]} classes={styles.card}></HGridItem>
                 <HGridItem data={productsToDisplay[5]} classes={styles.card}></HGridItem>
-                <HGridItem data={productsToDisplay[6]} classes={styles.card}></HGridItem>
+                <Questions data={props.questions} classes={`${styles.colorCard}`}></Questions>
                 <HGridItem data={productsToDisplay[7]} classes={styles.card}></HGridItem>
                 <Banner class={styles.BanClass} image={'/static/images/icons/Banner.png'}></Banner>
                 <Item data={productsToDisplay[8]} classes={`${styles.twoCols} ${styles.card}`} type={'custom'}></Item>

@@ -80,3 +80,20 @@
 .rightBtn{
     margin-left: 8px;
 }
+.colorCard{
+    padding: 24px 32px;
+    gap: 10px;
+    background: #FEF9A7;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: ; */
+}
+
+
+@media screen and (max-width: 1200px) {
+    
+}

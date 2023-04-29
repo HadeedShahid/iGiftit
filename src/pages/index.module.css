@@ -787,5 +787,8 @@ max-width: 600px;
     .Work{
         margin-top: 80px;
     }
+    .footer_desc{
+        font-size: 16px;
+    }
 
 }
