@@ -1,6 +1,7 @@
 import LandingpageCard from 'Components/UI/LandingpageCard';
 import styles from './index.module.css'
 import Authenticate from 'Components/Authenticate/Authenticate';
+import Footer from '../../Components/Footer/Footer'
 const LandingPage=()=>{
   return(
     <div className={styles.Body}>
@@ -99,10 +100,7 @@ const LandingPage=()=>{
         
       </div>
 
-      <div className={styles.footer}>
-        <div className={styles.Logo}>iGift it<span className={styles.dot}>.</span></div>
-        <div className={styles.footer_desc}>Copyright. All rights reserved</div>
-      </div>
+      <Footer></Footer>
     </div>
   );
 };

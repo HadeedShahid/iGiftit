@@ -28,3 +28,27 @@
     transform: translate(0,-50%);
     /* border: 2px solid black; */
 }
+@media (max-width: 820px){
+    .cont{
+        padding: 8px 16px;
+        max-width: 260px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+    }
+    .search{
+        left: 10px;
+        width: 10px;
+        height: 10px;
+    }
+    .inp{
+        margin-left: 10px;
+        font-size: 10px;
+        /* border: 2px solid red; */
+    }
+}

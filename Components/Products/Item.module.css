@@ -246,3 +246,50 @@
         font-size: 12px;
     }
 } */
+@media screen and (max-width: 1200px) {
+    .customCard{
+        padding: 16px 24px;
+        height: 260px;
+    }
+    .customImgContainer{
+        height: 100%;
+        /* border: 2px solid red; */
+        width: 60%;
+    }
+    .customName{
+        font-size: 16px;
+    }
+    .customDesc{
+        font-size: 8px;
+    }
+    .customSeller{
+        font-size: 8px;
+    }
+    .btnClass{
+        min-width: 70px;
+        height: 26px;
+        justify-content: center;
+    }
+    .btnClass span{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 820px) {
+    .customDesc{
+        overflow: hidden;
+        font-size: 7px;
+    }
+    .customName{
+        font-size: 12px;
+        max-height: 60px;
+        overflow: hidden;
+    }
+    .btnClass{
+        min-width: 60px;
+        height: 20px;
+        justify-content: center;
+    }
+    .btnClass span{
+        font-size: 8px;
+    }
+}

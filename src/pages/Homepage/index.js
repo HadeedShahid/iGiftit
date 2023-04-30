@@ -3,6 +3,7 @@ import Header from '../../../Components/Header/Header'
 import HomeGrid from '../../../Components/Products/HomeGrid';
 import Recommendation from '../../../Components/Products/Recommendation';
 import SearchBar from 'Components/UI/SearchBar';
+import Footer from 'Components/Footer/Footer';
 // import prisma from 'lib/prisma';
 const Homepage=(props)=>{
     const data = props.products
@@ -26,6 +27,7 @@ const Homepage=(props)=>{
             <SearchBar></SearchBar>
             <Recommendation data={data?[data[0],data[1]]:{}} questions={questions}></Recommendation>
             <HomeGrid questions={questions} data={data?data.slice(2):{}}></HomeGrid>            
+            <Footer></Footer>
         </Fragment>
     );
 };

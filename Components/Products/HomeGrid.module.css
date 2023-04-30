@@ -94,6 +94,42 @@
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 820px) {
+    .layout{
+        row-gap: 20px;
+        column-gap: 15px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .BanClass{
+        grid-column-start: 1;
+        grid-column-end:4;
+        grid-row-start: 3;
+        
+    }
+    .twoCols{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .btnFont{
+        font-size: 8px;
+        padding: 4px 6px;
+    }
+    .btn{
+        width: 20px;
+        height: 20px;
+    }
     
+}
+
+@media screen and (max-width: 576px) {
+    .layout{
+        /* border: 2px solid red; */
+        /* display: flex; */
+        grid-template-columns: repeat(2,1fr);
+    }
+    .BanClass{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
 }

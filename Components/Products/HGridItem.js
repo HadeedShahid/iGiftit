@@ -14,7 +14,7 @@ const HGridItem=(props)=>{
     const desc = props.data.description;
     const price = props.data.price;
 
-    console.log(props.data)
+    // console.log(props.data)
     const normal = 
         <Card classes={`${styles.card} ${props.classes}`}>
             <div className={styles.ImgCont}>

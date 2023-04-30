@@ -17,6 +17,25 @@
 }
 @media screen and (max-width: 1500px) {
     .btn{
-        padding: 2px;
+        padding: 5px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .btn{
+        /* padding: 0px; */
+        font-size: 8px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 900px) {
+    .btn{
+        height: auto;
+    }
+}
+@media screen and (max-width: 576px) {
+    .btn{
+        font-size: 6px;
+        letter-spacing: 0;
+        /* padding: 3px; */
     }
 }
