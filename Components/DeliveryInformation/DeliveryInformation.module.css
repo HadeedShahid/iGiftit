@@ -4,3 +4,12 @@
     column-gap: 50px;
     /* border: 2px solid red; */
 }
+@media (max-width: 1200px){
+    .PageWrap{
+        /* grid-template-columns: repeat(1,1fr); */
+        display: flex;
+        flex-direction: column-reverse;
+        max-width: 600px;
+        margin-right: 0;
+    }
+}

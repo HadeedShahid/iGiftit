@@ -7,7 +7,7 @@ const WrapItem=(props)=>{
     const [selectCard,setSelectCard] = useState(false);
     const wrapBtnHandler=(event)=>{
         // setPressed( Number(event.target.id));
-        // console.log (typeof event.target.id);
+        console.log (typeof event.target.id);
         props.onSelectWrap(Number(event.target.id))
         
     }

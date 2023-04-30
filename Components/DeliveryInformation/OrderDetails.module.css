@@ -55,6 +55,9 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.02);
     border-radius: 8px 0px 8px 8px;
     margin: auto 0;
+
+    margin-bottom: 30px;
+    
 }
 .PaymentTotalOrder{
     font-family: 'Plus Jakarta Sans';
@@ -78,3 +81,19 @@
     font-size: 16px;
     color: #242424;
 }
+@media (max-width: 1500px){
+    .OuterCard{
+        /* border: 2px solid red; */
+    }
+    .CardWrap{
+        /* border: 2px solid black; */
+        /* margin-top: 24px; */
+        width: 100%;
+    }
+}
+@media (max-width: 769px){
+    .title{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 576px){}

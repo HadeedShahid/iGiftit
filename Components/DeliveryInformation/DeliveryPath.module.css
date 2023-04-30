@@ -27,3 +27,25 @@
 .PathCont .Selected{
     font-weight: 600;
 }
+@media (max-width: 769px){
+    .PathCont span{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 576px){
+  
+    .PathCont img,
+    .PathCont span{
+         margin-right: 0px;
+
+    }
+    .PathCont{
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+}
+@media screen and (max-width: 410px) {
+    .PathCont span{
+        font-size: 10px;
+    }
+}
