@@ -26,7 +26,6 @@ const YourInfo=(props)=>{
         {addAddress && <AddAddress submitHandler={AddAddressHandler} onClose={()=>{setAddAddress(false)}}></AddAddress>}
         <div className={styles.container}>
             <div className={styles.InfoWrap}>
-                <div>
                     <h1 className={styles.title}>Account Information</h1>
                     <div className={styles.btnCont}>
                         <Button class={`${styles.GreetingCard} ${styles.long}`}>
@@ -41,8 +40,6 @@ const YourInfo=(props)=>{
                             </div>
                         </Button>
                     </div>
-                </div>
-                
                 <div className={styles.infocont}>
                     <InfoInput></InfoInput>
                 </div>

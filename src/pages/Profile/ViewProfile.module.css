@@ -40,3 +40,24 @@
     border: none;
     padding-bottom: 14px;
 }
+
+@media screen and (max-width: 1500px) {
+}
+@media screen and (max-width: 1200px) {
+}
+@media (max-width: 769px){
+}
+@media screen and (max-width: 576px) {
+    .linkBox{
+        width: 100%;
+        max-width: 250px;
+        margin-top: 50px;
+    }
+    .Focused{
+        font-size: 14px;
+    }
+    .NotFocused{
+        font-size: 14px;
+    }
+    
+}
