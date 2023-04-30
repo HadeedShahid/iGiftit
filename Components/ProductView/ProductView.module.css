@@ -4,7 +4,6 @@
     font-weight: 500;
     font-size: 20px;
     color: #242424;
-
 }
 .desc{
     font-family: 'Plus Jakarta Sans';
@@ -24,12 +23,36 @@
     row-gap: 40px;
     column-gap: 30px;
     margin-top: 40px; 
+    /* border: 2px solid grey; */
 }
 .TextWrap{
     max-width: 400px;
     margin: auto 0;
 }
 .prodInfo{
-    margin: auto 0 0 auto;
-    width: 80%;
+    margin: auto;
+    width: 100%;
+}
+@media screen and (max-width: 1100px) {
+    .heading{
+        font-size: 18px;
+    }
+    .desc{
+        font-size: 10px;
+    }
+    
+}
+@media (max-width: 769px){
+    .wrapper{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto repeat(1,1fr) auto;
+        row-gap: 20px;
+    }
+    .TextWrap{
+        grid-row-start: 3;
+        width: 100% !important;
+        max-width: 640px;
+        margin: auto;
+        /* border: 2px solid gold; */
+    }
 }

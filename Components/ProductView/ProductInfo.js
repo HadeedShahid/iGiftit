@@ -27,21 +27,22 @@ const ProductInfo=(props)=>{
     }
     return(
         <div className={styles.cont}>
-            <div className={styles.NamePrice}>
-                <h1>{props.data.name}</h1>
-                <p>{props.data.price}</p>
-            </div>
+            <div className={styles.lowerDiv}>
+                <div className={styles.NamePrice}>
+                    <h1>{props.data.name}</h1>
+                    <p>Rs. {props.data.price}</p>
+                </div>
                 <div className={styles.ByColor}>
-                    <p>{props.data.seller}</p>
+                    <p className={styles.By}>By: {props.data.seller}</p>
                     {props.data.colors && 
                         <Fragment>
-                            <p>Item Color</p>
+                            <p className={styles.colors}>Item Color</p>
                             <BtnChooseColor data={props.data.colors} onClick = {(e)=>{setColor(e)}}></BtnChooseColor>
                         </Fragment>
                     }
                     {props.data.size && 
                         <Fragment>
-                            <p>Item Size</p>
+                            <p className={styles.sizes}>Item Size</p>
                             <BtnChooseColor data={props.data.size} onClick = {(e)=>{setSize(e)}}></BtnChooseColor>
                         </Fragment>
                     }
@@ -58,6 +59,8 @@ const ProductInfo=(props)=>{
                         <img src='/static/images/icons/cartIconWhite.png' alt='Cart Icon'></img>
                     </Button>
                 </div>
+        </div>
+           
         </div>
     );
 };

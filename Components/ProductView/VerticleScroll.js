@@ -6,7 +6,9 @@ const VerticleScroll=(props)=>{
     })
     return(
         <div className={styles.scrollable}>
-           {imgs}
+            <div className={styles.cont}>
+                {imgs}
+            </div>
         </div>
     );
 };

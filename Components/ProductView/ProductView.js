@@ -34,16 +34,18 @@ const ProductView=(props)=>{
     return(
         <Fragment>
             <Header></Header>
-            <div>hi</div>
             <div className={styles.wrapper}>
                 <div className={styles.TextWrap}>
                     <div className={styles.heading}>Product Description</div>
-                    <div className={styles.desc}>{props.data.long_description}</div>
+                    {/* <div className={styles.desc}>{props.data.long_description}</div> */}
+                    <div className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae. Nisi vitae suscipit tellus mauris a. Elit ut aliquam purus sit amet luctus venenatis lectus. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Sed velit dignissim sodales ut eu. Lectus sit amet est placerat in. Et tortor consequat id porta nibh venenatis cras sed felis. Neque aliquam vestibulum morbi blandit cursus. Interdum consectetur libero id faucibus nisl tincidunt eget. Amet luctus venenatis lectus magna. Dictum sit amet justo donec enim.</div>
+
                 </div>
                 <VerticleScroll data = {props.data.images}></VerticleScroll>
                 <div className={styles.prodInfo}>
                     <ProductInfo 
-                        onAddCart={addToCartHandler} data={prodInfo} cards={props.cards}></ProductInfo>
+                        onAddCart={addToCartHandler} data={prodInfo} cards={props.cards}>    
+                    </ProductInfo>
                 </div>
             </div>
            
