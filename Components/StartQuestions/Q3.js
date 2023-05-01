@@ -7,7 +7,7 @@ const Q3=(props)=>{
     const style = ['Classic','Casual','Sporty']
     const tech = ['Yes','No',"I'm not sure"]
     const left = 
-        <div className={styles.wrap}>
+        <div className={`${styles.wrap} ${styles.margBot}`}>
             <div className={styles.question}>What is his style like ?</div>
             {style.map((item)=>{
                 return <button key={Math.random()} onClick={()=>{setObjLeft({'style like':item});setLeftDone(true)}} className={styles.opt}>{item}</button>
@@ -30,7 +30,7 @@ const Q3=(props)=>{
     return(
         <div className={styles.cont}>
             {left}
-            {leftDone ? right:undefined}
+            {!leftDone ? right:undefined}
         </div>
     );
 }

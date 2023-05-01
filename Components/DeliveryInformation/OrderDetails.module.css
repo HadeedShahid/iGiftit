@@ -9,6 +9,7 @@
 .CardWrap{
     /* border: 2px solid black; */
     margin-top: 24px;
+    width: 100%;
 }
 .Cartcard{
         width: 100%;
@@ -57,7 +58,7 @@
     margin: auto 0;
 
     margin-bottom: 30px;
-    
+    /* border: 2px solid red; */
 }
 .PaymentTotalOrder{
     font-family: 'Plus Jakarta Sans';
@@ -82,9 +83,7 @@
     color: #242424;
 }
 @media (max-width: 1500px){
-    .OuterCard{
-        /* border: 2px solid red; */
-    }
+    
     .CardWrap{
         /* border: 2px solid black; */
         /* margin-top: 24px; */
@@ -96,4 +95,15 @@
         font-size: 16px;
     }
 }
-@media screen and (max-width: 576px){}
+@media screen and (max-width: 576px){
+    .PaymentTotalOrder{
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    .Total{
+        font-size: 14px;
+    }
+    .Charges{
+        font-size: 10px;
+    }
+}

@@ -5,7 +5,7 @@
     align-items: center;
     /* border: 2px solid green; */
     height: 90vh;
-    min-height: 700px;
+    /* min-height: 700px; */
     max-height: 1080px;
     /* margin-top: 0; */
 
@@ -13,4 +13,12 @@
 .btnWrap{
     display: flex;
     flex-direction: row;
+}
+@media (max-width: 769px){
+    /* .cont{
+        height: 100vh;
+        min-height: 900px;
+        max-height: auto;
+    
+    } */
 }

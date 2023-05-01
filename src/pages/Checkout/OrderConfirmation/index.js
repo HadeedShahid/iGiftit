@@ -10,13 +10,16 @@ const OrderConfirmation=(props)=>{
     return(
         <Fragment>
             <div className={styles.backdrop} onClick={props.onClose}></div>
-            <Card classes={styles.Cartcard}>
-                <div className={styles.greet}>Thankyou for shopping with us !</div>
-                <div className={styles.placedsucc}>Your order has been placed successfully</div>
-                <div className={styles.status}>You can check the status of your order in Profile &gt; My Orders</div>
-                <OrderDetails orderConfirm={true} type='payment' prodData={props.productData} prodCost={props.cost}></OrderDetails>
-                <button className={styles.backbtn} onClick={()=>{router.push('/Homepage')}}>Back to Shopping</button>
-            </Card>
+            <div className={styles.wrap}>
+                <Card classes={styles.Cartcard}>
+                    <div className={styles.greet}>Thankyou for shopping with us !</div>
+                    <div className={styles.placedsucc}>Your order has been placed successfully</div>
+                    <div className={styles.status}>You can check the status of your order in Profile &gt; My Orders</div>
+                    <OrderDetails classes={styles.outerCard} orderConfirm={true} type='payment' prodData={props.productData} prodCost={props.cost}></OrderDetails>
+                    <button className={styles.backbtn} onClick={()=>{router.push('/Homepage')}}>Back to Shopping</button>
+                </Card>
+            </div>
+            
         </Fragment>
     );
 }

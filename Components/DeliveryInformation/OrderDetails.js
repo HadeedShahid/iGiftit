@@ -61,7 +61,7 @@ const OrderDetails=(props)=>{
                 <div className={styles.Total}>Total : Rs. {props.prodCost+200}</div> 
     </Card>
     return(
-        <div className={styles.OuterCard}>
+        <div className={`${styles.OuterCard} ${props.classes}`}>
             {props.orderConfirm ? undefined : <div className={styles.title}>Order Details</div>}
             <div className={styles.CardWrap}>
                     <Card classes={styles.Cartcard}>

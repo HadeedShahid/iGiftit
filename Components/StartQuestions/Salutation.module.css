@@ -23,3 +23,21 @@
     flex-direction: column;
     /* border: 2px solid red; */
 }
+@media (max-width: 769px){
+    .logo{
+        font-size: 26px;
+        /* border: 2px solid green; */
+    }
+    .desc{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 576px){
+    .logo{
+        font-size: 22px;
+        /* border: 2px solid green; */
+    }
+    .desc{
+        font-size: 12px;
+    }
+}

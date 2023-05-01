@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    min-width: fit-content;
+
 }
 .optclass{
     display: flex;
@@ -12,6 +14,7 @@
     justify-content: space-between;
     align-items: center;
     /* border: 2px solid red; */
+    width: 100%;
 }
 .inpclass{
     display: flex;
@@ -66,4 +69,20 @@
     border: 1px solid #E0E0E0;
     border-radius: 100px;
     margin-bottom: 16px;
+}
+@media (max-width: 769px){
+    .question{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+}
+@media screen and (max-width: 576px){
+    
+    .question{
+        font-size: 15px;
+    }
+    .inp{
+        width: 100%;
+    }
 }
