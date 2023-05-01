@@ -29,13 +29,19 @@ const GetStarted=()=>{
     },[index])
     return(
         <div className={styles.cont}>
-            <Salutation></Salutation>
-            {questions[index]}
-            <div className={styles.btnWrap}>
-                <QButton see={true}></QButton>
-                <QButton skipIndex={()=>{setIndex(()=>{return index+1})}}></QButton>
+            <div className={styles.inner}>
+                <div className={styles.salBuff}>
+                    <Salutation></Salutation>
+                </div>
+                <div className={styles.queBuff}>
+                    {questions[index]}
+                </div>
+               
+                <div className={styles.btnWrap}>
+                    <QButton see={true}></QButton>
+                    <QButton skipIndex={()=>{setIndex(()=>{return index+1})}}></QButton>
+                </div>
             </div>
-            
         </div>
         
     );
