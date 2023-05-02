@@ -4,5 +4,11 @@
     border: none;
     /* text-decoration: none; */
 }
-  
+.button:hover{
+    box-shadow: -2px 2px 2px #999;
+    background: #242424d8;
+}
+.button{
+    text-decoration: none;
+}
   

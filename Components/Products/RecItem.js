@@ -3,7 +3,9 @@ import Card from 'Components/UI/Card';
 import Link from 'next/link';
 import Button from 'Components/UI/Button';
 import { Fragment } from 'react';
+import { useRouter } from 'next/router';
 const RecItem=(props)=>{
+    const router = useRouter()
     if (props.data==undefined){
         return;
     }
@@ -14,8 +16,11 @@ const RecItem=(props)=>{
     const desc = props.data.description;
     const price = props.data.price;
 
+    const onClickHandler=()=>{
+        router.push('/Products/' + id)
+    }
     const normal = 
-        <Card classes={`${styles.card} ${props.classes}`}>
+        <Card onClick={onClickHandler} classes={`${styles.card} ${props.classes}`}>
             <div className={styles.ImgCont}>
                 <img src={image}></img>
             </div>
@@ -25,7 +30,7 @@ const RecItem=(props)=>{
                     <div className={styles.desc}>{desc+desc+desc}</div>
                     <div className={styles.price}><span className={styles.spn}>Rs. {price}</span></div>
                     <div className={styles.button}>
-                        <Link href={'/Products/' + id}>
+                        <Link style={{ textDecoration: 'none' }} href={'/Products/' + id}>
                             <Button class={`${styles.btnClass}`}>
                                 <span>Gift Item</span>
                                 <img src='/static/images/icons/trailingIcon.png'></img>

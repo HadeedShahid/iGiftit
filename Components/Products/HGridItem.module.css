@@ -2,6 +2,10 @@
     /* border: 2px solid red; */
     padding: 24px 32px;
 }
+.card:hover{
+    /* box-shadow: 2px 2px 2px #999; */
+    background-color: #f7f7f773;
+}
 .lowerWrap{
     /* border: 2px solid red; */
     display: grid;

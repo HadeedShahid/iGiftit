@@ -25,6 +25,9 @@
     font-size: 14px;
     color: #FFFFFF;
 }
+.backbtn:hover{
+    background: hsla(0, 0%, 13%, 0.89);;
+}
 .wrap{
     position: absolute;
     left: 50%;

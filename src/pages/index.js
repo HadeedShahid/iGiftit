@@ -50,10 +50,10 @@ const LandingPage=()=>{
             </div>
             <div className={styles.DelRight}>
               <LandingpageCard classes={`${styles.party} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="Party.svg" title="Party Event Gift"></LandingpageCard>
-              <LandingpageCard classes={`${styles.heart} ${styles.DelCardColorBlack} ${styles.DelCardFontWhite}`} image="heart.svg" title="Party Event Gift"></LandingpageCard>
-              <LandingpageCard classes={`${styles.wedding} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="wedding.svg" title="Party Event Gift"></LandingpageCard>
-              <LandingpageCard classes={`${styles.Party} ${styles.DelCardColorWhite} ${styles.DelCardFontBlack}`} image="Bear.svg" title="Party Event Gift"></LandingpageCard>
-              <LandingpageCard classes={`${styles.Cake} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="Cake.svg" title="Party Event Gift"></LandingpageCard>
+              <LandingpageCard classes={`${styles.heart} ${styles.DelCardColorBlack} ${styles.DelCardFontWhite}`} image="heart.svg" title="Gift for Someone Special"></LandingpageCard>
+              <LandingpageCard classes={`${styles.wedding} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="wedding.svg" title="Wedding Gift"></LandingpageCard>
+              <LandingpageCard classes={`${styles.Bear} ${styles.DelCardColorWhite} ${styles.DelCardFontBlack}`} image="Bear.svg" title="Gift for Kids"></LandingpageCard>
+              <LandingpageCard classes={`${styles.Cake} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="Cake.svg" title="Birthday Gift"></LandingpageCard>
             </div>
         </div>
       </div>

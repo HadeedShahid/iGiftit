@@ -54,6 +54,9 @@
     color: #787878;
     margin-left: 8px;
 }
+.checkout:hover{
+    background: hsla(0, 0%, 13%, 0.89);
+}
 .checkout{
     height: 40px;
     width: 100%;

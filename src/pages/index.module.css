@@ -1,3 +1,38 @@
+/*
+++++++++++++++ Hover Classes +++++++++++++++++++++
+*/
+.LoginBtn:hover{
+    /* background-color: #dadada6c; */
+    /* border: 2px solid red !important; */
+    /* border: 2px solid #dadada6c; */
+    box-shadow: 2px 2px 5px 0px #999;
+}
+.SignupBtn:hover{
+    /* background: rgba(33, 33, 33, 0.74); */
+    /* box-shadow: 2px 12px 15px #999; */
+    box-shadow: 3px 3px 6px 0px #999;
+}
+.Hero .GetStarted:hover{
+    box-shadow: -1px -1px 5px #999;
+    float: left;
+    margin-left: 3px;
+    margin-top: 3px;
+    transition: all .2s;
+}
+.WorkButton:hover{
+    box-shadow: 0px -6px 5px #999;
+    float: left;
+    /* margin-left: 3px; */
+    margin-top: 3px;
+    transition: all .2s;
+}
+/* .DelCardColorBlack:hover{
+    background-color: rgba(33, 33, 33, 0.74);
+}
+.DelCardColorGrey:hover{
+    background-color: #FCFCFC;
+} */
+
 .Body{
     margin: auto;
 }
@@ -67,6 +102,7 @@
 .LoginBtn{
     background-color: #fff;
 }
+
 .SignupBtn{
     background: #212121;
     color: white;
@@ -306,7 +342,7 @@ max-width: 600px;
     bottom: 0;
     transform: translate(225%,-300%);
 }
-.Party{
+.Bear{
     left: 0;
     bottom: 0;
     transform: translate(325%,-200%);
@@ -454,6 +490,14 @@ max-width: 600px;
     background: #212121;
     border-radius: 4px;
     color: #FFF;
+
+    /* title medium */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
 }
 .bottomWrap{
     display: flex;

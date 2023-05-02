@@ -13,6 +13,9 @@
     /* margin: 5px 0px; */
     /* margin-bottom: 15px; */
 }
+.btn:hover{
+    cursor: pointer;
+}
 .btn:last-child{
     border-right: none;
 }

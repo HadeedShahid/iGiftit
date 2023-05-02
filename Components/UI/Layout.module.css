@@ -4,3 +4,6 @@
     /* border: 2px solid black; */
     margin: 10px auto;
 }
+.Container button,.Container  button * {
+    cursor: pointer;
+}

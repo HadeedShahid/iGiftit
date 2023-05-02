@@ -25,6 +25,10 @@
   font-weight:normal;
   border: none;
 }
+.incdec:hover{
+  background: #dadada;
+  cursor: pointer;
+}
 .prop::-webkit-inner-spin-button, 
 .prop::-webkit-outer-spin-button { 
   -webkit-appearance: none;

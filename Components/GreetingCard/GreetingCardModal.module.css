@@ -7,6 +7,11 @@
     color: #242424;
     margin-bottom: 40px;
 }
+.hover:hover{
+    background: #000000cc;
+    /* box-shadow: -2px 2px 2px #999; */
+
+}
 .card{
     position: absolute;
     left: 50%;
@@ -161,4 +166,8 @@
         color: #FFFFFF;
         margin: auto;
     }
+ 
+    /* .cardInput button:hover{
+        border: 2px solid red;
+    } */
 } 

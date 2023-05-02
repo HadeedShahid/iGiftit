@@ -226,3 +226,7 @@ body {
     /* font-size: 0.70em; */
   }
 }
+
+* {
+  cursor: default;
+}

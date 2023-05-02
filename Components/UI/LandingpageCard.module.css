@@ -1,3 +1,6 @@
+.card:hover {
+  box-shadow: 2px 12px 15px #999;
+}
 .card{
     /* border: 2px solid red; */
     height: 240px;

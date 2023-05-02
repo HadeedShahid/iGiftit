@@ -3,6 +3,7 @@ import Card from 'Components/UI/Card';
 import Link from 'next/link';
 import Button from 'Components/UI/Button';
 import { Fragment } from 'react';
+import Router, { useRouter } from 'next/router';
 const HGridItem=(props)=>{
     if (props.data==undefined){
         return;
@@ -14,9 +15,13 @@ const HGridItem=(props)=>{
     const desc = props.data.description;
     const price = props.data.price;
 
+    const router = useRouter();
     // console.log(props.data)
+    const onClickHandler=()=>{
+        router.push('/Products/' + id)
+    }
     const normal = 
-        <Card classes={`${styles.card} ${props.classes}`}>
+        <Card onClick = {onClickHandler} classes={`${styles.card} ${props.classes}`}>
             <div className={styles.ImgCont}>
                 <img src={image}></img>
             </div>

@@ -43,7 +43,7 @@ const GreetingCardModal=(props)=>{
                         <input type='text' onChange={NameHandler}></input>
                         <label>Greeting Wish (optional)</label>
                         <input type='text'  onChange={WishHandler}></input>
-                        <button type="submit">Add Greeting Card</button>
+                        <button className={styles.hover} type="submit">Add Greeting Card</button>
                     </form>
                 </Fragment>
             )

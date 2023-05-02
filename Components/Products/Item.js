@@ -52,7 +52,7 @@ const Item=(props)=>{
                 </div>
                 <div className={styles.customWrap}>
                     <span className={styles.customPrice}>Rs. {price}</span>
-                    <Link href={'/Products/' + id}>
+                    <Link href={'/Products/' + id} style={{ textDecoration: 'none' }}>
                         <Button class={styles.btnClass}>
                             <span>Gift Item</span>
                             <img src='/static/images/icons/trailingIcon.png'></img>
