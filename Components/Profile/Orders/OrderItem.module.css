@@ -69,6 +69,11 @@
 }
 .Detail{
     margin-bottom: 14px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
 }
 .OrderCardWrap{
     width: 100%;
@@ -78,3 +83,27 @@
     margin-bottom: 16px;
 }
 
+@media screen and (max-width: 410px) {
+    .Button{
+        padding: 8px;
+        width: fit-content;
+    }
+    .Button span{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        color: #242424;
+        margin-right: 5px;
+    }
+    .Button img{
+        width: 16px;
+        height: 16px;
+    }
+    .OrderInfo span{
+        font-size: 12px;
+    }
+    .Detail{
+        margin-bottom: 10px;
+    }
+}

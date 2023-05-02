@@ -25,3 +25,25 @@
     align-items: center;
     justify-content: center;
 }
+@media (max-width: 769px){
+    .question{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 576px){
+    .question{
+        font-size: 15px;
+    }
+    .inp{
+        padding: 8px;
+        width: 90%;
+        height: 30px;
+        font-size: 12px;
+    }
+    .cont{
+       /* border: 2px solid red; */
+       width: 90%;
+       margin: auto;
+    }
+}

@@ -63,4 +63,33 @@
 .CustomizeWrap > div:first-of-type{
     margin-right: 16px;
 }
+.CheckBoxWrap span{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
 
+}
+.CheckBoxWrap img{
+    width: 14px;
+    height: 18px;
+}
+@media screen and (max-width: 410px) {
+    .ProdTitle{
+        font-size: 14px;
+    }
+    .ProdDetail{
+        font-size: 12px;
+    }
+    .ProdDetail span{
+        margin-right: 5px;
+    }
+    .CheckBoxWrap img{
+        margin-right: 5px;
+    }
+    .CheckBoxWrap span{
+        font-size: 12px;
+    
+    }
+}

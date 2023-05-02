@@ -30,7 +30,7 @@ const Q3=(props)=>{
     return(
         <div className={styles.cont}>
             {left}
-            {!leftDone ? right:undefined}
+            {leftDone ? right:undefined}
         </div>
     );
 }

@@ -103,3 +103,24 @@
     font-size: 14px;
     color: #787878;
 }
+@media (max-width: 769px){
+    .cont{
+        border: 2px solid red;
+        width: 80%;
+    }
+}
+@media (max-width: 576px){
+    .cont{
+        width: 90%;
+        padding: 16px 8px;
+    }
+    .CalTitle{
+        font-size: 18px;
+    }
+    .CalDot{
+        font-size: 18px;
+    }
+    .desc{
+        font-size: 12px;
+    }
+}

@@ -58,8 +58,9 @@ body {
 
 .react-calendar__navigation {
   display: flex;
-  height: 44px;
+  height: fit-content;
   margin-bottom: 1em;
+  /* border: 2px solid red; */
 }
 
 .react-calendar__navigation button {
@@ -68,6 +69,7 @@ body {
  background: none;
  font-size: 16px;
  margin-top: 8px;
+ 
 }
 
 .react-calendar__navigation button:disabled {
@@ -84,6 +86,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.75em;
+
 }
 
 .react-calendar__month-view__weekdays__weekday {
@@ -205,4 +208,21 @@ body {
   height: 8px;
   border-radius: 50%;
   background-color: #CD1315;
+}
+
+@media (max-width: 576px){
+  .react-calendar__navigation {
+    min-width: fit-content;
+    /* width: 100%; */
+  }
+  .react-calendar__navigation button {
+    font-size: 14px;
+    /* border: 2px solid red; */
+    min-width: fit-content;
+    width: 100%;
+    max-width: 100%;
+  }
+  .react-calendar__month-view__weekdays {
+    /* font-size: 0.70em; */
+  }
 }
