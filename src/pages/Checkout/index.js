@@ -5,6 +5,7 @@ import userCartContext from "Contexts/CartContext";
 import { useSession } from "next-auth/react"
 // import OrderConfirmation from "./OrderConfirmation/OrderConfirmation";
 import { useRouter } from 'next/router'
+import LoadingSpinner from "Components/Spinner/Spinner";
 const Checkout=()=>{
 
     const ctx = useContext(userCartContext)
@@ -14,6 +15,7 @@ const Checkout=()=>{
 
     const [productData,setProductData] = useState();
     const [total,setTotal] = useState(0);
+    const [loading,setIsLoading] = useState(false);
     const router = useRouter()
     
 
@@ -111,6 +113,7 @@ const Checkout=()=>{
         });
     }
     const placeOrderHandler=async()=>{
+        setIsLoading(true);
         console.log("pressed")
         const email = session.user.email;
         const status = 'In Transit';
@@ -132,6 +135,7 @@ const Checkout=()=>{
         .then((response) => {
             response.json()
             if (response.ok){
+                setIsLoading(false);
                 setOrderPlaced(true);
                 router.push({
                     pathname: '/Checkout/OrderConfirmation',
@@ -145,7 +149,7 @@ const Checkout=()=>{
             {
                 console.log("in log",data)
             }
-        );
+        ).catch(e=>{setIsLoading(false)})
 
         ctx.clearCart()
 
@@ -161,7 +165,7 @@ const Checkout=()=>{
                     console.log("prod name",await placeOrderHandler())
                 }
                 }></PaymentInformationPage>:undefined}
-
+            {loading ? <LoadingSpinner></LoadingSpinner>:undefined}
         </Fragment>
     );
 }

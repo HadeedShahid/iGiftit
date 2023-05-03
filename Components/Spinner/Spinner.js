@@ -1,11 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styles from "./Spinner.module.css";
 
-export default function LoadingSpinner() {
+export default function LoadingSpinner(props) {
   return (
-    <div className={styles.spinner-container}>
-      <div className={styles.loading-spinner}>
+    <Fragment>
+      <div className={styles.backdrop}></div>
+      <div className={styles.spinnerContainer}>
+        <div className={styles.loadingSpinner}>
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 }

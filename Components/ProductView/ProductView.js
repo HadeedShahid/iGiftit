@@ -5,11 +5,12 @@ import ProductInfo from './ProductInfo';
 import { Fragment,useContext,useEffect, useState } from 'react';
 import userCartContext from 'Contexts/CartContext';
 import { useRouter } from 'next/router';
+import Spinner from '../Spinner/Spinner'
 //helper compoenent ( recieves data from parent component after all the fetching and send to chidlren)
 //all the other data processing done here
 const ProductView=(props)=>{
     const ctx = useContext(userCartContext);
-
+    const [loading,setIsLoading] = useState(false);
     const { id,longDesc,images, ...remain } = props.data;
     const prodInfo = remain;
     console.log("info",prodInfo)
@@ -18,9 +19,11 @@ const ProductView=(props)=>{
     // const addWrapHandler=()=>{}
     // const addCardMessageHandler=()=>{}
     const addToCartHandler =async(e)=>{
+        setIsLoading(true);
         console.log("in hadnelr")
         const prodId = props.data.id;
         await ctx.addCartItem({ [prodId]:e});
+        setIsLoading(false);
         router.push(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/Homepage`)
     }
 
@@ -33,6 +36,7 @@ const ProductView=(props)=>{
     
     return(
         <Fragment>
+            {loading ? <Spinner></Spinner>:undefined}
             <Header></Header>
             <div className={styles.wrapper}>
                 <div className={styles.TextWrap}>

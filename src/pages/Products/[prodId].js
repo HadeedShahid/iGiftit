@@ -1,22 +1,31 @@
 import ProductView from "../../../Components/ProductView/ProductView";
 import {useRouter} from 'next/router'
 import { Fragment, useEffect, useState } from "react";
+import Spinner from '../../../Components/Spinner/Spinner'
 const Product=()=>{
     const router = useRouter();
-    const prodId = router.query.prodId;
+    const [isLoading, setIsLoading] = useState(true)
     const [data,setData] = useState(null);
     //fetch the data for the product by id
     //example data (also how the data should look like)
     useEffect(()=>{
-        const options={
-            method:"POST",
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({id:prodId})
+        const prodId = router.query.prodId;
+        if (prodId){
+            console.log("id",prodId)
+
+            const options={
+                method:"POST",
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({id:prodId})
+            }
+        
+            fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProductById`,options) .then((response) => response.json())
+            .then((data) => {setIsLoading(false);setData(data.product)}).catch(error => {
+                console.log(error);
+                setIsLoading(false);
+            });
         }
-    
-        fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Products/getProductById`,options) .then((response) => response.json())
-        .then((data) => {console.log(data.product);setData(data.product)})
-    },[]);
+    },[router.query.prodId]);
     
 
     const cards = [
@@ -29,7 +38,8 @@ const Product=()=>{
     ]
     return(
         <Fragment>
-            {data ?  <ProductView data={data} cards={cards}></ProductView> : <h1>none</h1>}
+            {isLoading ? <Spinner></Spinner>:undefined}
+            {data ?  <ProductView data={data} cards={cards}></ProductView> : undefined}
         </Fragment>
     );
 };

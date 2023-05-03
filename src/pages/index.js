@@ -103,5 +103,6 @@ const LandingPage=()=>{
       <Footer></Footer>
     </div>
   );
+  
 };
 export default LandingPage

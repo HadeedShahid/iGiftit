@@ -5,11 +5,14 @@ import Header from "../../../Components/Header/Header";
 import styles from './ViewProfile.module.css'
 import { getSession, useSession, signOut } from "next-auth/react";
 import { useEffect } from "react";
+import Spinner from '../../../Components/Spinner/Spinner'
+
 const ViewProfile=()=>{
     const [InfoPressed,setInfoPressed] = useState(true);
     const [addresses,setAddresses]=useState([]);
     const [orders,setOrders] = useState([]);
     const [IsAddUpdated,setIsAddUpdated] = useState(false);
+    const [loading,setIsLoading] = useState(true);
     const { data: session } = useSession();
     const InfoHandler=()=>{
         setInfoPressed(true);
@@ -79,6 +82,12 @@ const ViewProfile=()=>{
         IsAddUpdated ? (fetchAddresses(email),setIsAddUpdated(false)):undefined
     },[IsAddUpdated]);
 
+    useEffect(()=>{
+        console.log("In loading")
+        if (addresses.length!==0 && orders.length!==0){
+            setIsLoading(false);
+        }
+    },[addresses,orders])
     return(
         <Fragment>
             <Header></Header>
@@ -89,6 +98,7 @@ const ViewProfile=()=>{
                 <button onClick={OrderHandler} className={`${!InfoPressed ? styles.Focused : styles.NotFocused}`}>Your Orders</button>
             </div>
             {InfoPressed ? <Profile onRemove={onRemoveHandler} onAddAddress={()=>{setIsAddUpdated(true);}} logoutBtn={logoutClickedHandler} Addresses={addresses}></Profile>:<Orders orders={orders}></Orders>}
+            {loading ? <Spinner></Spinner>:undefined}
 
         </Fragment>
     );

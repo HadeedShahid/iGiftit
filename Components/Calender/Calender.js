@@ -5,13 +5,16 @@ import moment from 'moment';
 import AddEvent from './AddEvent';
 // import { addReminder } from 'lib/prisma/reminders';
 import { useSession} from "next-auth/react"
+import LoadingSpinner from 'Components/Spinner/Spinner';
 const Cart=(props)=>{
     const [date, setDate] = useState(new Date())
     const [isSame, setIsSame] = useState(new Date())
     const [addBtn, setaddBtn] = useState(false);
     const [reminders,setReminders] = useState();
     const [datesToHighlight,setdatesToHighlight] =useState();
+    const [loading,setIsLoading] = useState(true);
     const { data: session } = useSession()
+
     const handleDateChange = (date) => {
         setDate(date)
         const calendarDate = moment(date);
@@ -99,8 +102,14 @@ const Cart=(props)=>{
         });
 
     },[]);
+
+
+    useEffect(()=>{
+         (reminders && datesToHighlight)? setIsLoading(false):null
+    },[reminders,datesToHighlight])
     return (
         <Fragment>
+            {loading ? <LoadingSpinner></LoadingSpinner> : undefined}
             {addBtn ? <AddEvent onEventAdd={addEventHandler} onClose={()=>{setaddBtn(false);console.log("closed")}}></AddEvent>:undefined}
             <div className={styles.backdrop} onClick={props.onClose}></div>
             <div className={styles.cont}>

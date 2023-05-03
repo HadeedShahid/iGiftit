@@ -3,6 +3,7 @@ import CartItem from './CartItem';
 import Card from 'Components/UI/Card';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import userCartContext from 'Contexts/CartContext';
+import LoadingSpinner from 'Components/Spinner/Spinner';
 const Cart=(props)=>{
 
 
@@ -11,7 +12,7 @@ const Cart=(props)=>{
     const ctx = useContext(userCartContext);
     const [productData,setProductData] = useState();
     const [total,setTotal] = useState(0);
-
+    const [loading,setIsLoading] = useState(true)
 
     useEffect(()=>{
         console.log("in use effect")
@@ -26,7 +27,7 @@ const Cart=(props)=>{
 
             await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItemsDetail`,options)
             .then((response) => response.json())
-            .then((data) => setProductData(
+            .then((data) => {setProductData(
                 ()=>{
                     // data.cartItems
                     let final = []
@@ -54,7 +55,10 @@ const Cart=(props)=>{
                     return final
                     // console.log("final",final)
                 }
-            ));
+            );setIsLoading(false)}).catch(error => {
+                console.log(error);
+                setIsLoading(false);
+            });
         }
         fetchData();  
         // console.log(productData)          
@@ -63,6 +67,7 @@ const Cart=(props)=>{
     
     return (
         <Fragment>
+            {loading ? <LoadingSpinner></LoadingSpinner> : undefined}
             <div className={styles.backdrop} onClick={props.onClose}></div>
             <div className={styles.cont}>
                 <div className={styles.yourCart}>Your Cart</div>
