@@ -4,9 +4,10 @@ import Card from 'Components/UI/Card';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import userCartContext from 'Contexts/CartContext';
 import LoadingSpinner from 'Components/Spinner/Spinner';
+import { useRouter } from 'next/router';
 const Cart=(props)=>{
 
-
+    const router = useRouter();
     //const ctx = useContext(userCartContext)
     //fetch data
     const ctx = useContext(userCartContext);
@@ -81,7 +82,7 @@ const Cart=(props)=>{
                     })  : undefined}
                 </Card>
                 <div className={styles.total}>Cart Total: Rs. {total}<span>Excluding Delivery Charges</span></div>
-                <button className={styles.checkout}>Proceed to Checkout</button>
+                <button className={styles.checkout} onClick={()=>{router.push('/Checkout')}}>Proceed to Checkout</button>
             </div>
             
         </Fragment>

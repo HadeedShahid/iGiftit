@@ -13,11 +13,12 @@
     box-shadow: 3px 3px 6px 0px #999;
 }
 .Hero .GetStarted:hover{
-    box-shadow: -1px -1px 5px #999;
-    float: left;
+    /* box-shadow: -1px -1px 5px #999; */
+    background-color: #444444;
+    /* float: left;
     margin-left: 3px;
     margin-top: 3px;
-    transition: all .2s;
+    transition: all .2s; */
 }
 .WorkButton:hover{
     box-shadow: 0px -6px 5px #999;
@@ -32,7 +33,19 @@
 .DelCardColorGrey:hover{
     background-color: #FCFCFC;
 } */
+.greetings{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #CD1315;
+}
+.greetings span{
+    font-size: 20px;
+    margin-left: 5px;
+    color: #242424;
 
+}
 .Body{
     margin: auto;
 }
@@ -70,11 +83,12 @@
 }
 .Links li{
     list-style: none;
-}
-.Links li a{
     text-decoration: none;
     color: #757575;
-    /* margin-right: 10px; */
+}
+.Links li:hover{
+    cursor: pointer;
+    color: #444444;
 }
 .BtnContainer{
     display: flex;
@@ -116,11 +130,11 @@
     /* max-width: 1650px; */
     /* margin: auto; */
     /* padding-top: 250px; */
-    min-height: 1000px;
-    height: 80vh;
+    min-height: 700px;
+    height: 100vh;
     max-height: 1200px;
     padding-bottom: 200px;
-    margin-top: 50px;
+    margin-top: 10px;
     background-color:#fcfcfc;
 
 }
@@ -772,6 +786,19 @@ max-width: 600px;
     }
     .Hero .you{
         width: 200px !important;
+    }
+    .greetings{
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        color: #CD1315;
+    }
+    .greetings span{
+        font-size: 16px;
+        margin-left: 5px;
+        color: #242424;
+    
     }
 }
 @media screen and (max-width: 576px) {

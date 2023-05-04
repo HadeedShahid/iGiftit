@@ -34,3 +34,20 @@
     margin-bottom: 24px;
     text-align: right;
 }
+@media screen and (max-width: 576px) {
+    .LoginForm label{
+        font-size: 10px;
+    }
+    .LoginForm input{
+        height: 30px;
+        margin-bottom: 16px;
+    }
+    .btn{
+        font-size: 12px;
+        padding: 12px 10px;
+    }
+    .ForgotPass{
+        margin-bottom: 14px;
+        font-size: 12px;
+    }
+}

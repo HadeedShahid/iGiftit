@@ -4,8 +4,8 @@
 .card{
     /* border: 2px solid red; */
     height: 240px;
-    /* width: 225px; */
-    flex-basis: 225px;
+    width: 225px;
+    /* flex-basis: 225px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
