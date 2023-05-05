@@ -7,3 +7,9 @@
 .Container button,.Container  button * {
     cursor: pointer;
 }
+.Container input{
+    cursor:text;
+}
+.Container a{
+    cursor:pointer;
+}

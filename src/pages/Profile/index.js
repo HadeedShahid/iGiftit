@@ -56,6 +56,7 @@ const ViewProfile=()=>{
             });
     };
     const onRemoveHandler=(idx)=>{
+        setIsLoading(true);
         const email = session.user.email
         const newAddresses = [...addresses]; // Make a copy of the addresses array
         newAddresses.splice(idx, 1); // Remove the nth element from the copy
@@ -66,7 +67,7 @@ const ViewProfile=()=>{
             body:JSON.stringify({email:session.user.email,addressToAdd:newAddresses})
         }
         fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/setWholeAddress`,options).then((response) => response.json())
-        .then((data) => {console.log(data);setAddresses(newAddresses);})
+        .then((data) => {setIsLoading(false);console.log(data);setAddresses(newAddresses);}).catch(e=>{setIsLoading(false);})
         
     }
     useEffect(() => {

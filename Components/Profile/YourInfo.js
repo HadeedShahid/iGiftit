@@ -6,24 +6,30 @@ import SavedPayment from './SavedPayment';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import AddAddress from './AddAddress';
 import { useSession, signIn, signOut } from "next-auth/react"
+import LoadingSpinner from "Components/Spinner/Spinner";
 
 const YourInfo=(props)=>{
     const [addAddress,setAddAddress] = useState(false);
+    const[loading,setLoading] = useState(false);
+
     const { data: session } = useSession()
     const AddAddressHandler=async (data)=>{
+        setLoading(true);
+
         const options={
             method:"POST",
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email:session.user.email,addressToAdd:data})
         }
         await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Addresses/setAddresses`,options).then((response) => response.json())
-        .then((data) => {props.onAddAddress(); setAddAddress(false); console.log(data)})
+        .then((data) => {setLoading(false); props.onAddAddress(); setAddAddress(false); console.log(data)}).catch(e=>{setLoading(true);})
         
        
     }
     return(
         <Fragment>
         {addAddress && <AddAddress submitHandler={AddAddressHandler} onClose={()=>{setAddAddress(false)}}></AddAddress>}
+        {loading ? <LoadingSpinner></LoadingSpinner>:undefined}
         <div className={styles.container}>
             <div className={styles.InfoWrap}>
                     <h1 className={styles.title}>Account Information</h1>
