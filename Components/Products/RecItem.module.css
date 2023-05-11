@@ -135,7 +135,7 @@
 .btnClass{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
     min-width: 90px;
     height: 32px;
@@ -147,8 +147,8 @@
     color: #FFFFFF;
 }
 .btnClass img{
-    width: 18px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
 
 }
 
@@ -198,6 +198,13 @@
     .seller{
         grid-column-start: 3;
         grid-column-end: 3;
+    }
+    .btnClass img{
+        width: 12px;
+        height: 12px;
+    }
+    .btnClass span{
+        font-size: 8px;
     }
 }
 @media screen and (max-width: 576px) {

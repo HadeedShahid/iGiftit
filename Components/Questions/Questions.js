@@ -1,11 +1,19 @@
 import BtnChoice from "../UI/BtnChoice";
 import styles from './Questions.module.css';
 import Card from "../UI/Card";
+import recContext from "Contexts/RecContext";
+import { useContext,useState } from "react";
 const Questions=(props)=>{
+    const ctx = useContext(recContext);
+    
     const question = props.data.question
+    // console.log(typeof question)
     const options = props.data.options.map(option=>{
-        return (<BtnChoice key={Math.random()}>{option}</BtnChoice>);
+        return (<BtnChoice onClick={()=>{
+            ctx.addRecItem({[question]:option});
+        }} key={Math.random()}>{option}</BtnChoice>);
     });
+ 
     return (
         <Card classes={`${props.classes}`}>
             <div className={styles.wrap}>

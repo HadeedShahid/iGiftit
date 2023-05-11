@@ -1,7 +1,7 @@
 import styles from './Q1.module.css'
 const Q1=(props)=>{
-    const questionImg=['him.svg', 'her.svg', 'kids.svg', 'friends.svg', 'all.svg',];
-    const questionCat=['For Him', 'For Her', 'For Kids', 'For Friends', 'For All']
+    const questionImg=['him.svg', 'her.svg', 'kids.svg', 'baby.svg', 'friends.svg','all.svg',];
+    const questionCat=['For Him', 'For Her', 'For Kids', 'For Baby', 'For Them', 'Custom']
 
 
     const cardClickHandler=()=>{
@@ -20,7 +20,8 @@ const Q1=(props)=>{
                                 props.addAnswer({'Who are you looking to buy a gift for ?':questionCat[index]})
                         }} key={Math.random()} className={styles.cardCont}>
                             <div className={styles.cardDesc}>{questionCat[index]}</div>
-                            <img src={`/static/images/questions/`+img}></img>
+                            {img==='baby.svg' ? <img className={styles.baby} src={`/static/images/questions/`+img}></img> :<img src={`/static/images/questions/`+img}></img>}
+                            
                         </div>
                     );
                 })}

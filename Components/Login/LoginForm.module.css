@@ -13,6 +13,8 @@
     /* width: 100%; */
 }
 .LoginForm input{
+    font-family: 'Plus Jakarta Sans';
+    color: #242424;
     width: 100%;
     height: 40px;
     margin-bottom: 24px;
@@ -20,6 +22,7 @@
     background: #FFFFFF;
     border: 1px solid #AAAAAA;
     border-radius: 4px;
+    padding: 0px 16px;
 }
 .btn{
 

@@ -1,7 +1,7 @@
 import styles from './BtnChoice.module.css'
 const BtnChoice=(props)=>{
     return (
-        <button className={styles.btn}>
+        <button onClick={props.onClick} className={styles.btn}>
             {props.children}
         </button>
     );

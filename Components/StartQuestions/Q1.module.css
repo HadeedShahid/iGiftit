@@ -28,6 +28,7 @@
 }
 .cardCont{
     min-height: 270px;
+    max-height: 270px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,6 +37,7 @@
     background: #FCFCFC;
     border-radius: 8px;
     padding: 32px;
+    /* object-fit: contain; */
 
 }
 .cardDesc{
@@ -45,6 +47,10 @@
     font-size: 24px;
     color: #242424;
 
+}
+.baby{
+    width: 100%;
+    /* height: min-content; */
 }
 @media (max-width: 1250px){
     .cards{
