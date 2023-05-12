@@ -1,17 +1,33 @@
 const { createContext } = require("react");
 import { useEffect, useState } from "react";
 const recContext = createContext({
-    recItems:[],
+    recItems:{},
     addRecItem: async (item)=>{},
+    init: async (data)=>{},
     removeRecItem: async (id)=>{},
 });
 
 export const RecContextProvider=(props)=>{
     
-    const [recItems,setRecItems] = useState([]);
+    const [recItems,setRecItems] = useState({});
 
+    const initHandler=(data)=>{
+        setRecItems(data);
+    }
     const addItemHandler=async(item)=>{
-        Array.isArray(item) ? setRecItems([...recItems, ...item]): setRecItems([...recItems, item])
+        // const data = item.data
+        if (item.type==="tag"){
+            // recItems(prev=>[...prev,item.data])
+            const newItem = recItems;
+            newItem.tags.append(item.data)
+            // setRecItems(prev=>{[...prev],item})
+            setRecItems(newItem);
+        }
+        else if (item.type===price){
+            const newItem = recItems;
+            newItem.price = item.price;
+            setRecItems(newItem);
+        }
     }
     const removeItemHandler=(id)=>{
        
@@ -25,6 +41,7 @@ export const RecContextProvider=(props)=>{
         <recContext.Provider value={
             {
                 recItems:recItems,
+                init:initHandler,
                 addRecItem: addItemHandler,
                 removeRecItem: removeItemHandler,
             }
