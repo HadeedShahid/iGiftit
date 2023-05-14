@@ -131,5 +131,9 @@
         grid-column-start: 1;
         grid-column-end: 3;
     }
+    .colorCard{
+        padding: 24px 10px;
+        /* justify-content: center; */
+    }
 
 }

@@ -1,30 +1,49 @@
 import Cart from "Components/Cart/Cart";
 import Calender from '../Calender/Calender'
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import styles from './Header.module.css';
 import { useRouter } from "next/router";
+import { useSession} from "next-auth/react"
+import LoginModal from "Components/Login/LoginModal";
 // import AddEvent from "Components/Calender/AddEvent";
 const Header=()=>{
     const router = useRouter()
     const [cartClick,setCartClick] = useState();
     const [calenderClick,setCalenderClick] = useState();
+
+    // const [loggenIn,setisLogginIn] = useState();
+    const { data: session } = useSession()
     const profileClick = () => {
-        router.push('/Profile');
+        if (session===null){router.push('/');return}
+        else{
+            router.push('/Profile');
+
+
+        }
     }
     const cartClickHandler = () => {
-        setCartClick(true);
+        if (session===null){router.push('/');return}
+        else{
+            setCartClick(true);
+        }
 
     }
     const calenderClickHandler = () => {
-        setCalenderClick(true)
+        if (session===null){router.push('/');return}
+        else{
+            setCalenderClick(true)
+
+        }
 
     }
     const HomeClick = () => {
         console.log("in route")
 
     }
+   
     return(
         <Fragment>
+            {/* {!loggenIn ? <LoginModal></LoginModal>:undefined} */}
             {cartClick && <Cart onClose={()=>{setCartClick(false)}}></Cart>}
             {calenderClick && <Calender onClose={()=>{setCalenderClick(false)}}></Calender>}
             <div className={styles['Header-Wrapper']}>

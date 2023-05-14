@@ -11,6 +11,7 @@ import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Question from "Components/StartQuestions/Question";
 const GetStarted=()=>{
+
     const router = useRouter()
     const ctx = useContext(recContext);
     const [index,setIndex]=useState(0)
@@ -21,6 +22,7 @@ const GetStarted=()=>{
     const [skiptrig,setSkiptrig]=useState(false)
     const [price,setPrice] = useState(0);
     const [push,setPush] = useState(false);
+    const [originialCat,setOriginalCat] = useState(0);
     // const addAnswerHandler=(obj)=>{
     //     ctx.addRecItem(obj);
     //     setIndex(()=>{return index+1})
@@ -31,6 +33,7 @@ const GetStarted=()=>{
     //                  <Q4 key={Math.random()} addAnswer={addAnswerHandler}></Q4>]
     const Category_Selected=(par)=>{
         setCat(par)
+        setOriginalCat(par[0])
     }
 
     //1 -> for him / for her / for them
@@ -38,13 +41,13 @@ const GetStarted=()=>{
     //3 -> Others
     const questions = {
         1:[
-            {'question':'What are they into?','tags':['Technology','Sports','Clothing']},
-            {'question':'Do they like wearing watches/rings or other accessories','options':['Yes','No'],'tags':['Accessories']},
-            {'question':'What about some of theme','tags':['Decoration Pieces','Bouqets','Flowers','Gift Baskets']},
+            {'question':'What are they into?','tags':['technology','sports','clothing']},
+            {'question':'Do they like wearing watches/rings or other accessories','options':['Yes','No'],'tags':['accessories']},
+            {'question':'What about some of theme','tags':['decoration','bouqets','flowers','gift / flower basket']},
         ],
         2:[
-            {'question':'What about some of these?','tags':['Toys','Clothind','Gift Baskets']},
-            {'question':'Would you like considering these also?','tags':['Decoration Pieces','Gift Baskets']},
+            {'question':'What about some of these?','tags':['toys','clothing','gift / flower basket']},
+            {'question':'Would you like considering these also?','tags':['decoration','gift / flower basket']},
         ],
         3:[
             {'question':'Choose your price range','tags':['<1000','1000-2500','2500-5000','>5000'],'price':true},
@@ -70,21 +73,31 @@ const GetStarted=()=>{
         if (!price){return}
         console.log("price",price)
         setPush(true);
-    },[price])
+    },[price])  
     useEffect(()=>{
         if (!push && !cat){return}
-        console.log("pushing")
+        console.log("pushing",cat)
         console.log(tags)
         const objToSend={
-            category:cat[1],
+            category:originialCat,
             tags:tags,
-            price:price
+            price:price===0 ? [0,100000]:price
         }
         console.log(objToSend)
+        // const temp = questions
+        // delete temp[3]
+        // const { 3, ...newObj } = objToSend;
+        // console.log(questions)
+        const { "3": _, ...updatedObject } = questions;
+        console.log("updated",updatedObject);
+        ctx.init(objToSend,questions)
+        // console.log(objToSend)
+        router.push('/Homepage')
     },[push])
     useEffect(()=>{
         if(!cat){return;}
-        console.log(questions[cat[0]].length)
+        // if (!questions){return;}
+        console.log("hi",questions)
         setLimIndex(questions[cat[0]].length)
         const questionFlow = questions[cat[0]].map((question)=>{
             return (<Question 
@@ -103,11 +116,11 @@ const GetStarted=()=>{
                     // console.log("tag1",typeof '<1000')
                     // console.log(tag[0]==='<1000')
                     if (tag[0]==='<1000'){ return [0,1000]}
-                    else if (tag[0]==='1000-2500'){ return [1000-2000]}
-                    else if (tag[0]==='2500-5000'){ return [2500-5000]}
+                    else if (tag[0]==='1000-2500'){ return [1000,2000]}
+                    else if (tag[0]==='2500-5000'){ return [2500,5000]}
                     else if (tag[0]==='>5000'){ return [5000,100000]}
                     else{
-                        return 0
+                        return [0,100000]
                     }
                 }) : (console.log("seeting tag"),setTags(prev=>[...prev,tag[0]]));
                 }}    

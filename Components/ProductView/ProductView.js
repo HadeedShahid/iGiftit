@@ -6,6 +6,7 @@ import { Fragment,useContext,useEffect, useState } from 'react';
 import userCartContext from 'Contexts/CartContext';
 import { useRouter } from 'next/router';
 import Spinner from '../Spinner/Spinner'
+import { useSession} from "next-auth/react"
 //helper compoenent ( recieves data from parent component after all the fetching and send to chidlren)
 //all the other data processing done here
 const ProductView=(props)=>{
@@ -15,10 +16,11 @@ const ProductView=(props)=>{
     const prodInfo = remain;
     console.log("info",prodInfo)
     const router = useRouter()
-
+    const { data: session } = useSession()
     // const addWrapHandler=()=>{}
     // const addCardMessageHandler=()=>{}
     const addToCartHandler =async(e)=>{
+        if (!session){router.push('/');return}
         setIsLoading(true);
         console.log("in hadnelr")
         const prodId = props.data.id;

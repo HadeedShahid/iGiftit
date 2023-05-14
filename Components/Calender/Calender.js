@@ -6,6 +6,7 @@ import AddEvent from './AddEvent';
 // import { addReminder } from 'lib/prisma/reminders';
 import { useSession} from "next-auth/react"
 import LoadingSpinner from 'Components/Spinner/Spinner';
+import LoginModal from 'Components/Login/LoginModal';
 const Cart=(props)=>{
     const [date, setDate] = useState(new Date())
     const [isSame, setIsSame] = useState(new Date())
@@ -79,6 +80,7 @@ const Cart=(props)=>{
         }
     }
     useEffect(()=>{
+        // console.log("lqrbierq;bjere;bjk")
         const email = session.user.email;
         const options={
             method:"POST",
