@@ -85,9 +85,13 @@ const ViewProfile=()=>{
 
     useEffect(()=>{
         console.log("In loading")
-        if (addresses.length!==0 && orders.length!==0){
-            setIsLoading(false);
-        }
+        // if (addresses.length!==0 && orders.length!==0){
+        //     setIsLoading(false);
+        // }
+        // if (addresses===0 && orders.length===0){
+        //     setIsLoading(false)
+        // }
+        setIsLoading(false)
     },[addresses,orders])
     return(
         <Fragment>
@@ -109,7 +113,7 @@ export async function getServerSideProps({req}){
     // console.log("Session",req)
     if (!session){
         return{redirect:{
-            destination:'/LandingPage',
+            destination:'/',
             permanent: false
         }
         }

@@ -5,24 +5,39 @@ import styles from './LoginModal.module.css';
 import Card from "../UI/Card";
 import { signIn, signOut } from "next-auth/react"
 import { useRouter } from "next/router";
+import LoadingSpinner from "Components/Spinner/Spinner";
 const LoginModal=(props)=>{
-
+    const [loading,setIsLoading] = useState(false);
     const router = useRouter();
     const formSubmitHandler= async (data)=>{
-       const status =  await signIn('credentials',{
-            redirect:false,
-            email:data.email,
-            password:data.password,
-            callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/Profile`
-        })
-        console.log(status);
-        if (status.ok){
-            router.push(status.url);
+        setIsLoading(true);
+        try {
+            const status =  await signIn('credentials',{
+                redirect:false,
+                email:data.email,
+                password:data.password,
+                callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/`
+            })
+            console.log(status);
+            if (status.ok){
+                router.push(status.url);
+            }
+            else{
+                setIsLoading(false)
+            }
+        } catch (error) {
+            setIsLoading(false)
         }
+       
         
     }
     const signinWithGoogleHandler = async ()=>{
-        signIn('google',{callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/LandingPage`});
+        try {
+            setIsLoading(true)
+            signIn('google',{callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/`});
+        } catch (error) {
+            setIsLoading(false)
+        }
 
 
         // signInWithPopup(auth,googleProvider).then((res)=>{
@@ -48,11 +63,11 @@ const LoginModal=(props)=>{
                 <div className={styles.title}>Welcome to iGiftit<span>.</span></div>
                 <div className={styles.LabelCreds}>Please Enter your credentials to Login</div>
                 <LoginForm onSubmitForm={formSubmitHandler}></LoginForm>
-                <Button class={styles.btnNoAccount}>I don't have an account</Button>
+                <Button onClick={props.onSwitch} class={styles.btnNoAccount}>I don't have an account</Button>
                 <div className={styles.or}>Or</div>
                 <Button class={styles.LoginGoogle} onClick={signinWithGoogleHandler}><img src="/static/images/icons/googleIcon.svg"></img> Continue with Google</Button>
         </Card>
-        
+        {loading ? <LoadingSpinner></LoadingSpinner>:undefined}
         </Fragment>
         
     );

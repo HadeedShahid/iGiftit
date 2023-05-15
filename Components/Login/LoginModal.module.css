@@ -50,6 +50,9 @@
     margin-bottom: 16px;
 
 }
+.btnNoAccount:hover{
+    background: #e6e6e6;
+}
 .or{
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
@@ -77,6 +80,9 @@
     font-weight: 500;
     font-size: 14px;
     color: #212121;
+}
+.LoginGoogle:hover{
+    background: #e6e6e6;
 }
 .LoginGoogle img{ 
     margin-right: 12px;

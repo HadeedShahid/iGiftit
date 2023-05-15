@@ -5,10 +5,12 @@ import styles from './SignupModal.module.css';
 import Card from "../UI/Card";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react"
+import LoadingSpinner from "Components/Spinner/Spinner";
 const SignupModal=(props)=>{
-
+    const [loading,setIsLoading] = useState(false);
     const router = useRouter();
     const formSubmitHandler = async (data)=>{
+        setIsLoading(true);
         console.log(data)
         const options={
             method:"POST",
@@ -24,15 +26,25 @@ const SignupModal=(props)=>{
         .then(data => {
             console.log("***data", data);
             if (data) {
-                router.push(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/LandingPage`);
+                setIsLoading(false)
+                console.log("in")
+                router.push(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}`);
+                props.onClose()
+
             }
-        });
+        }).catch(error=>setIsLoading(false));
 
 
         
     }
     const signupWithGoogleHandler=async()=>{
-        signIn('google',{callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/LandingPage`});
+        setIsLoading(true)
+        try {
+            signIn('google',{callbackUrl:`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/`});
+        } catch (error) {
+            setIsLoading(false)
+        }
+        
     }
     return(
         <Fragment>
@@ -41,10 +53,11 @@ const SignupModal=(props)=>{
                 <div className={styles.title}>Welcome to iGiftit<span>.</span></div>
                 <div className={styles.LabelCreds}>Please Enter the required information to create your account</div>
                 <SignupForm onSubmitForm={formSubmitHandler}></SignupForm>
-                <Button class={styles.btnNoAccount}>Already have an account ? Login Instead</Button>
+                <Button onClick={props.onSwitch} class={styles.btnNoAccount}>Already have an account ? Login Instead</Button>
                 <div className={styles.or}>Or</div>
                 <Button class={styles.LoginGoogle} onClick={signupWithGoogleHandler}><img src="/static/images/icons/googleIcon.svg"></img> Continue with Google</Button>
             </Card> 
+            {loading ? <LoadingSpinner></LoadingSpinner>:undefined}
         </Fragment>
     );
 };

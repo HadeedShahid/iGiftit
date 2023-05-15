@@ -8,11 +8,28 @@ import { useEffect, useState } from 'react';
 const LandingPage=()=>{
   const { data: session } = useSession()
   const [auth,setAuth] = useState();
+  const [trigLogin,setTrigLogin] = useState(false);
   const router = useRouter()
+
+  useEffect(()=>{console.log("Value changed")},[trigLogin])
   const getStartedBtnHandler=()=>{
+    if (session===null){
+      console.log("in")
+      setTrigLogin(prev=>!prev);
+      const section = document.querySelector( '#Body' );
+      section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+      return;
+    }
     router.push('/GetStarted')
   }
   const CardHandler=()=>{
+    if (session===null){
+      console.log("in")
+      setTrigLogin(prev=>!prev);
+      const section = document.querySelector( '#Body' );
+      section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+      return;
+    }
     router.push('/GetStarted')
   }
   const WorkScroll = () => {
@@ -20,8 +37,9 @@ const LandingPage=()=>{
     section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
   };  
   const GiftScroll = () => {
-    const section = document.querySelector( '#Delivered' );
-    section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+    // const section = document.querySelector( '#Delivered' );
+    // section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+    router.push('/ViewAll')
   };  
   // console.log(session.user.email)
   useEffect(()=>{
@@ -29,11 +47,11 @@ const LandingPage=()=>{
       setAuth(<div className={styles.greetings}>Hello,<span>{session.user.name}</span></div>)
     }
     else{
-      setAuth(<Authenticate loginStyle={`${styles.BtnDesign} ${styles.BtnFont} ${styles.LoginBtn}`} signupStyle={`${styles.BtnDesign} ${styles.BtnFont} ${styles.SignupBtn}`}></Authenticate>)
+      setAuth(<Authenticate pressLogin={trigLogin} onLogin={()=>{setTrigLogin(false)}} loginStyle={`${styles.BtnDesign} ${styles.BtnFont} ${styles.LoginBtn}`} signupStyle={`${styles.BtnDesign} ${styles.BtnFont} ${styles.SignupBtn}`}></Authenticate>)
     }
-  },[session])
+  },[session,trigLogin])
   return(
-    <div className={styles.Body}>
+    <div id='Body' className={styles.Body}>
       <div className={styles.Header}>
         <div className={styles.Logo}>iGift it<span>.</span></div>
         <ul className={styles.Links}>
