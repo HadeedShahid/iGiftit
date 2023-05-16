@@ -37,6 +37,13 @@ const LandingPage=()=>{
     section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
   };  
   const GiftScroll = () => {
+    if (session===null){
+      console.log("in")
+      setTrigLogin(prev=>!prev);
+      const section = document.querySelector( '#Body' );
+      section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+      return;
+    }
     // const section = document.querySelector( '#Delivered' );
     // section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
     router.push('/ViewAll')
