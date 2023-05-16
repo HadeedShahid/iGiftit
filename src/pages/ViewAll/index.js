@@ -9,13 +9,31 @@ import Spinner from '../../../Components/Spinner/Spinner'
 // import prisma from 'lib/prisma';
 // import recContext from 'Contexts/RecContext';
 import ViewAllGrid from 'Components/ViewAll/ViewAllGrid';
+// import ToggleContext from 'Contexts/ToggleContext';
+import { Router, useRouter } from 'next/router';
 const Homepage=(props)=>{
 
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState()
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredProducts,setFilteredProducts] = useState();
+
+    // const ctx = useContext(ToggleContext);
+    const router = useRouter();
+    // useEffect(()=>{
+    //     if (ctx.toggle){
+    //         router.replace('/Homepage');
+    //     }
+    // },[ctx.toggle])
+
+    // useEffect(()=>{
+    //     if (!ctx.toggle){return}
+
+    //     router.push('/Homepage')
+    // },[ctx.toggle])
+
     useEffect(()=>{
+        // ctx.manualTrigger(false);
         setIsLoading(true)
             const options = {method: "GET",
                 headers: { 'Content-Type': 'application/json' },
@@ -51,7 +69,7 @@ const Homepage=(props)=>{
     return(
         <Fragment>
             <Header></Header>
-            <SearchBar value={searchQuery} onChange={(e)=>{setSearchQuery(e)}}></SearchBar>
+            <SearchBar type={false} value={searchQuery} onChange={(e)=>{setSearchQuery(e)}}></SearchBar>
             <ViewAllGrid searchQuery={searchQuery} data={filteredProducts}></ViewAllGrid>
             <Footer></Footer>
             {isLoading ? <Spinner></Spinner>:undefined}

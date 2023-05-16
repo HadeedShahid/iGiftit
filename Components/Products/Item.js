@@ -3,7 +3,10 @@ import Button from '../UI/Button';
 import Card from '../UI/Card';
 import { Fragment } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 const Item=(props)=>{
+    const router = useRouter()
     if (props.data==undefined){
         return;
     }
@@ -13,7 +16,10 @@ const Item=(props)=>{
     const seller = props.data.seller;
     const desc = props.data.long_description;
     const price = props.data.price;
-    console.log("%$&^%&$%^%^",props.data)
+    // console.log("%$&^%&$%^%^",props.data)
+    const onClickHandler=()=>{
+        router.push('/Products/' + id)
+    }
     const normal = <Card classes={`${styles.card} ${props.classes}`}>
             <div className={props.type==='gridItem' ? styles.gridSize : styles.imgContainer}>
                 <img src={image}></img>
@@ -38,7 +44,7 @@ const Item=(props)=>{
             </div>
         </Card>
     const custom = 
-    <Card classes={`${styles.customCard} ${props.classes}`}>
+    <Card onClick={onClickHandler} classes={`${styles.customCard} ${props.classes}`}>
             <div className={styles.customImgContainer}>
                 <img src={image}></img>
             </div>

@@ -19,6 +19,10 @@ export const RecContextProvider=(props)=>{
     const [ques,setQues] = useState();
     const [change,setChange] = useState(false);
 
+    useEffect(()=>{
+        
+    },[])
+
     const changePriceHandler=(type)=>{
                 // console.log("updating price",JSON.stringify({...recItems, price:[recItems.price[0],recItems.price[1]+500]}))
                 if (type==="incless"){
@@ -44,6 +48,8 @@ export const RecContextProvider=(props)=>{
     const initHandler=(data,ques)=>{
         setRecItems(data);
         setQues(Object.values(ques).flatMap((arr) => arr))
+        localStorage.setItem('data',JSON.stringify(data));
+        localStorage.setItem('ques',JSON.stringify(Object.values(ques).flatMap((arr) => arr)));
         
         // console.log("ques",)
     }
@@ -65,6 +71,7 @@ export const RecContextProvider=(props)=>{
             newItem.tags.append(item.data)
             // setRecItems(prev=>{[...prev],item})
             setRecItems(newItem);
+            localStorage.setItem('data',JSON.stringify(newItem));
         }
         else if (item.type===price){
             const newItem = recItems;

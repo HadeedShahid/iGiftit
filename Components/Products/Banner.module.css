@@ -42,7 +42,8 @@
     height: 20px;
     margin-left: 5px;
 }
-@media screen and (max-width: 1400px) {
+/* @media screen and (max-width: 1750px) { */
+@media screen and (max-width: 1750px) {
     .BannerText{
         font-size: 32px;
     }

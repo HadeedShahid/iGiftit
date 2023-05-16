@@ -21,6 +21,7 @@ const ViewProfile=()=>{
         setInfoPressed(false);
     }
     const logoutClickedHandler=()=>{
+        localStorage.removeItem('data');localStorage.removeItem('ques')
         signOut();
     };
     
