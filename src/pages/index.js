@@ -149,7 +149,7 @@ const LandingPage=()=>{
           <div>
             <img className={styles.three} src='/static/images/landingpage/workimg3.svg'></img>
           </div>
-          <button className={styles.WorkButton} onClick={getStartedBtnHandler}>Get Started</button>
+          <button className={styles.WorkButton} onClick={GiftScroll}>Get Started</button>
         </div>
         
       </div>
