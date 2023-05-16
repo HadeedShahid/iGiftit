@@ -1,7 +1,7 @@
 import styles from './Q1.module.css'
 const Q1=(props)=>{
-    const questionImg=['him.svg', 'her.svg','friends.svg', 'kids.svg', 'baby.svg','all.svg',];
-    const questionCat=['For Him', 'For Her','For Them', 'For Kids', 'For Baby', 'Others']
+    const questionImg=['him.svg', 'her.svg','kids.svg','baby.svg','friends.svg','all.svg',];
+    const questionCat=['For Him', 'For Her','For Kids', 'For Baby','For Them', 'Others']
 
     return(
         <div className={styles.Cont}>

@@ -32,8 +32,10 @@ const GetStarted=()=>{
     //                  <Q3 key={Math.random()} addAnswer={addAnswerHandler}></Q3>,
     //                  <Q4 key={Math.random()} addAnswer={addAnswerHandler}></Q4>]
     const Category_Selected=(par)=>{
+        const questionCat=['For Him', 'For Her','For Kids', 'For Baby','For Them', 'Others']
         setCat(par)
-        setOriginalCat(par[0])
+        console.log("finding index",questionCat.indexOf(par[1])+1)
+        setOriginalCat(questionCat.indexOf(par[1])+1)
     }
 
     //1 -> for him / for her / for them
@@ -53,8 +55,6 @@ const GetStarted=()=>{
             {'question':'Choose your price range','tags':['<1000','1000-2500','2500-5000','>5000'],'price':true},
         ]
     }
-
-
     const category= 
     <div className={styles.inner}>
     <div className={styles.salBuff}>
@@ -83,7 +83,7 @@ const GetStarted=()=>{
             tags:tags,
             price:price===0 ? [0,100000]:price
         }
-        console.log(objToSend)
+        console.log("obj to send",objToSend)
         // const temp = questions
         // delete temp[3]
         // const { 3, ...newObj } = objToSend;
@@ -111,6 +111,9 @@ const GetStarted=()=>{
                     setPush(true);
                 }}
                 onSelectOption={(tag)=>{
+                    console.log("tag",tag)
+                    if (!tag){setSkiptrig(true); return}
+                    // if (tag[0]==='No'){setSkiptrig(true);}
                 tag[1] ? setPrice(()=>{
                     // console.log("tag1",typeof tag[0])
                     // console.log("tag1",typeof '<1000')

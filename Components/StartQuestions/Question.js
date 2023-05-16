@@ -12,9 +12,37 @@ const Question=(props)=>{
                             {props.question}
                         </div>
                         <div className={styles.ans}>
-                            {props.options.map((option)=>{return(
-                                <div key={Math.random()} onClick={()=>{props.onSelectOption([props.yesno ? props.yesno : option,props.isPrice])}} className={styles.options}>{option}</div>
-                            );})}
+                        {props.yesno ? (
+                            props.options.map((option) => {
+                                return (
+                                <div
+                                    key={Math.random()}
+                                    onClick={() => {
+                                    props.onSelectOption(option === 'Yes' ? ['accessories', props.isPrice] : undefined);
+                                    }}
+                                    className={styles.options}
+                                >
+                                    {option}
+                                </div>
+                                );
+                            })
+                            ) : (
+                            props.options.map((option) => {
+                                return (
+                                <div
+                                    key={Math.random()}
+                                    onClick={() => {
+                                    props.onSelectOption([props.yesno ? option : option, props.isPrice]);
+                                    }}
+                                    className={styles.options}
+                                >
+                                    {option}
+                                </div>
+                                );
+                            })
+                            )}
+
+                            
                             {/* <div className={styles.options}>For him</div>
                             <div className={styles.options}>For him</div>
                             <div className={styles.options}>For him</div> */}
