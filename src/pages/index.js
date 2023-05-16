@@ -97,7 +97,7 @@ const LandingPage=()=>{
             </div>
             <div className={styles.DelRight}>
               <LandingpageCard onClick={CardHandler} classes={`${styles.party} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="Party.svg" title="Party Event Gift"></LandingpageCard>
-              <LandingpageCard onClick={CardHandler} classes={`${styles.heart} ${styles.DelCardColorBlack} ${styles.DelCardFontWhite}`} image="heart.svg" title="Gift for Someone Special"></LandingpageCard>
+              <LandingpageCard onClick={CardHandler} classes={`${styles.heart} ${styles.DelCardColorBlack} ${styles.DelCardFontWhite}`} image="Heart.svg" title="Gift for Someone Special"></LandingpageCard>
               <LandingpageCard onClick={CardHandler} classes={`${styles.wedding} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="wedding.svg" title="Wedding Gift"></LandingpageCard>
               <LandingpageCard onClick={CardHandler} classes={`${styles.Bear} ${styles.DelCardColorWhite} ${styles.DelCardFontBlack}`} image="Bear.svg" title="Gift for Kids"></LandingpageCard>
               <LandingpageCard onClick={CardHandler} classes={`${styles.Cake} ${styles.DelCardColorGrey} ${styles.DelCardFontBlack}`} image="Cake.svg" title="Birthday Gift"></LandingpageCard>
