@@ -51,7 +51,7 @@ const Cart=(props)=>{
                             card : alias.card ? alias.card:undefined,
                         })
                     });
-                    console.log("cost",cost)
+                    console.log("cost",final)
                     setTotal(cost);
                     return final
                     // console.log("final",final)

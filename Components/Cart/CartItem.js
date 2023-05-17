@@ -22,6 +22,7 @@ const CartItem=(props)=>{
     const tick = <img src='/static/images/icons/tick.png'></img>
     const untick = <img src='/static/images/icons/untick.png'></img>
 
+    console.log("sizes",sizes)
     return(
         <div className={styles.card}>
             {   props.cart ?
