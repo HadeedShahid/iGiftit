@@ -3,7 +3,7 @@ import Button from '../UI/Button';
 import Link from 'next/link';
 const Banner=(props)=>{
     const image = props.image;
-    const id = '6463269492ad558bfa90dab9'
+    const id = '6464e0944ec0a5dedfb195cb'
     return(
         <div className={`${styles.wrapper} ${props.class}`}>
             <img className={styles.mainImg} src={image} alt='Banner img'></img>
