@@ -79,7 +79,6 @@ const Homepage=(props)=>{
             .then(productData => {
               const products = productData.map((prod)=>{
                 const obj = prod.product
-                obj.price *= 100;
                 return obj
             })
             console.log(products)

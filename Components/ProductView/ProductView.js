@@ -26,7 +26,9 @@ const ProductView=(props)=>{
         const prodId = props.data.id;
         await ctx.addCartItem({ [prodId]:e});
         setIsLoading(false);
-        router.push(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/Homepage`)
+        router.back()
+        // (props.source ? router.push(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/ViewAll`):router.push(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/Homepage`))
+        
     }
 
     useEffect(() => {
@@ -38,7 +40,6 @@ const ProductView=(props)=>{
     
     return(
         <Fragment>
-            {loading ? <Spinner></Spinner>:undefined}
             <Header></Header>
             <div className={styles.wrapper}>
                 <div className={styles.TextWrap}>
@@ -54,6 +55,8 @@ const ProductView=(props)=>{
                     </ProductInfo>
                 </div>
             </div>
+            {loading ? <Spinner></Spinner>:undefined}
+
            
             
         </Fragment>

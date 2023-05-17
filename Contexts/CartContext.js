@@ -12,11 +12,12 @@ const userCartContext = createContext({
 
 export const CartContextProvider=(props)=>{
     
-    const [cartItems,setCartItems] = useState();
+    const [cartItems,setCartItems] = useState([]);
     const { data: session } = useSession()
 
     const addItemHandler=async(item)=>{
         console.log("setting item", item);
+        console.log("cart items",cartItems)
         const newArray = [...cartItems,item]
         console.log(newArray)
         setCartItems(newArray)
@@ -83,7 +84,7 @@ export const CartContextProvider=(props)=>{
         }
         fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/Cart/getCartItems`,options)
         .then((response) => response.json())
-        .then((data) => { setCartItems(data.cartItems);console.log("fetched data",data.cartItems)});
+        .then((data) => { setCartItems(data.cartItems ? data.cartItems:[]);console.log("fetched data",data.cartItems)});
     }
     const removeItemHandler=(id)=>{
         (el)=>{ setCartItems(

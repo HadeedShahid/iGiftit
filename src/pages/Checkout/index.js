@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react"
 // import OrderConfirmation from "./OrderConfirmation/OrderConfirmation";
 import { useRouter } from 'next/router'
 import LoadingSpinner from "Components/Spinner/Spinner";
+import StripePaymentInfo from 'Components/PaymentInformation/StripePaymentInfo'
 const Checkout=()=>{
 
     const ctx = useContext(userCartContext)
@@ -159,12 +160,20 @@ const Checkout=()=>{
         <Fragment>
             {/* <OrderConfirmation prodData={productData} prodCost={total}></OrderConfirmation> */}
             {!deliveryInfo ? <DeliveryInformationPage prodData={productData} prodCost={total} onSaveDelivery={(e)=>{setDeliveryInfo(e)}}></DeliveryInformationPage>:undefined}
-            {deliveryInfo ? <PaymentInformationPage prodData={productData} prodCost={total} onConfirmPayment={
+            {/* {deliveryInfo ? <PaymentInformationPage prodData={productData} prodCost={total} onConfirmPayment={
                 // placeOrderHandler
                 async()=>{
                     console.log("prod name",await placeOrderHandler())
                 }
-                }></PaymentInformationPage>:undefined}
+                }></PaymentInformationPage>:undefined} */}
+            {deliveryInfo ? <StripePaymentInfo
+            onConfirmPayment={
+                // placeOrderHandler
+                async()=>{
+                    console.log("prod name",await placeOrderHandler())
+                }
+                }
+            ></StripePaymentInfo>:undefined}
             {loading ? <LoadingSpinner></LoadingSpinner>:undefined}
         </Fragment>
     );

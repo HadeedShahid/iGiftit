@@ -1,6 +1,7 @@
 import styles from './Question.module.css'
 import QButton from './QButton';
 const Question=(props)=>{
+    const images = ['1.png','2.png','3.png','4.png','5.png']
     return(
         <div className={styles.cont}>
             <div className={styles.left}>
@@ -56,7 +57,7 @@ const Question=(props)=>{
                 
             </div>
             <div className={styles.right}>
-                <img src='/static/images/questions/q.jpg'></img>
+                <img src={`/static/images/getstarted/${images[Math.floor(Math.random() * (4 - 0 + 1)) + 0]}`}></img>
             </div>
            
         </div>

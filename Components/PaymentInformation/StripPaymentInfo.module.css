@@ -1,0 +1,47 @@
+.Cont{
+    /* border: 2px solid red; */
+   
+}
+.Cont h1{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    color: #242424;
+    font-size: 18px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+.Cont button{
+    border: 1px solid #242424;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    color: #242424;
+    font-size: 12px;
+    padding: 10px 16px;
+    background: white;
+    margin: 30px auto;
+    margin-bottom: 0px;
+    width: 100%;
+}
+.Cont button:hover{
+    background: #242424;
+    color: #fff;
+    border: 1px solid white;
+
+    transition: background 0.5s ease;
+}
+.card{
+    /* border: 2px solid red; */
+    padding: 32px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    min-width: 250px;
+    /* height: 200px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

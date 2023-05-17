@@ -6,10 +6,12 @@ const Product=()=>{
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(true)
     const [data,setData] = useState(null);
+    // const sourceP = router.query.source;
     //fetch the data for the product by id
     //example data (also how the data should look like)
     useEffect(()=>{
         const prodId = router.query.prodId;
+        // const sourceP = query.source;
         if (prodId){
             console.log("id",prodId)
 
