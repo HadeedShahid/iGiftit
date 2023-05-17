@@ -64,6 +64,11 @@
     font-weight: 500;
     font-size: 14px;
     color: #242424;
+    /* background: #00000073; */
+    /* border: 2px solid rgb(56, 56, 56); */
+}
+.selected{
+    border: 1px solid green
 }
 .selectGreet span{
     color: #787878;

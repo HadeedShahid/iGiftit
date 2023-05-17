@@ -38,7 +38,7 @@ const Header=()=>{
     }
     const HomeClick = () => {
         console.log("in route")
-
+        router.push('/')
     }
    
     return(

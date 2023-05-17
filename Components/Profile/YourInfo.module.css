@@ -44,13 +44,14 @@
 }
 .container{
     /* width: fit-content; */
+    margin-top: 40px;
     max-width: 60%;
     min-width: fit-content;
     height: fit-content;
     
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     /* border: 2px solid blue; */
 }
@@ -122,10 +123,10 @@
     margin-bottom: 0;
 }
 .savedWrap{
-    margin-top: 20px;
+    /* margin-top: 20px; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     /* border: 2px solid green; */
 }
 
@@ -179,6 +180,7 @@
 @media screen and (max-width: 576px) {
     .container{
         flex-direction: column;
+        margin-top: 20px;
     }
     .InfoWrap{
         margin-right:0;

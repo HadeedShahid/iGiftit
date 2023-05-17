@@ -60,7 +60,7 @@ const YourInfo=(props)=>{
                     </div>
                     <SavedAddresses onRemove={props.onRemove} Addresses={props.Addresses}></SavedAddresses>
                 </div>
-                <div className={styles.addrCardWrap}>
+                {/* <div className={styles.addrCardWrap}>
                     <div className={styles.addressWrap}>
                         <h1 className={styles.title}>Payment Methods</h1>
                         <Button class={`${styles.btnadd}`}>
@@ -68,7 +68,7 @@ const YourInfo=(props)=>{
                         </Button>
                     </div>
                     <SavedPayment></SavedPayment>
-                </div>
+                </div> */}
 
 
             </div>            
