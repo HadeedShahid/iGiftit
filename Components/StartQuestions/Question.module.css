@@ -7,6 +7,10 @@
     max-height: 1080px;
     /* height: 500px; */
 }
+.options:hover{
+    cursor: pointer;
+    background: #e6e6e6;
+}
 .left{
     /* margin-top: 50%; */
     /* transform: translate(0%,-25%); */

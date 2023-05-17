@@ -8,6 +8,12 @@
     /* margin-top: 50px; */
     /* margin-bottom: 50px; */
 }
+.cardDesc:hover,.cardCont:hover,.cardCont img:hover{
+    cursor: pointer;
+    background: #e4e4e4;
+
+
+}
 .question{
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
