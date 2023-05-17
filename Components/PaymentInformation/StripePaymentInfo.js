@@ -27,7 +27,22 @@ const CheckoutForm = (props) => {
       console.log(paymentMethod);
       // Redirect user here
     //   router.push('/Checkout/OrderConfirmation'); // Replace '/success' with your desired success page URL
-      props.onConfirmPayment()
+        props.onConfirmPayment()
+          // const options={
+          //   method:"POST",
+          //   headers:{'Content-Type':'application/json'},
+          //   body:JSON.stringify({})
+          // }
+          // await fetch(`${process.env.NEXT_PUBLIC_PROTOCOL}://${process.env.NEXT_PUBLIC_CUSTOM_URL}/api/create-payment-intent`,options)
+          // .then(async (response) => {
+          //     await response.json()
+          //     console.log("seccesachu******",response)
+          // })
+          // .then((data) =>
+          //     {
+          //         console.log("in log",data)
+          //     }
+          // ).catch(e=>{setIsLoading(false)})
     }
   };
 
